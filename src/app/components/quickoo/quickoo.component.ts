@@ -12,4 +12,5 @@ export class QuickooComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
