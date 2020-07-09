@@ -7,7 +7,6 @@ import { QuickooComponent } from './components/quickoo/quickoo.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarifComponent } from './components/tarif/tarif.component';
 import { AuthComponent } from './components/auth/auth.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     TarifComponent,
     AuthComponent,
-    FooterComponent
   ],
   imports: [
     BrowserModule
