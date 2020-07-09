@@ -1167,8 +1167,8 @@ body {
 .about--banner h2::before {
     content: "";
     position: absolute;
-    top: 60px;
-    left: 268px;
+    top: 128px;
+    left: 34px;
     width: 30px;
     height: 30px;
     background-color: #e85f03;
