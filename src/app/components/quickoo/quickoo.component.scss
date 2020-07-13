@@ -1,0 +1,19 @@
+.intro--banner::before {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: -15px;
+    right: 0;
+    height: 2px;
+    background-color: #282828
+}
+
+.intro--banner::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #e85f03
+}

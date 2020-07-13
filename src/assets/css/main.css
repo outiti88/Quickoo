@@ -717,26 +717,6 @@ body {
     height: 475px
 }
 
-.intro--banner::before {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    left: -15px;
-    right: 0;
-    height: 2px;
-    background-color: #282828
-}
-
-.intro--banner::after {
-    content: "";
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #e85f03
-}
-
 .intro--banner h1 {
     position: relative;
     font-size: 68px;
