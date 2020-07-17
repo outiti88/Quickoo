@@ -1,97 +1,52 @@
-nav {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
-    width: 319px;
-    display: table;
-    margin: 0 auto;
-    transform: translateY(-50%);
-}
-
-nav a {
+div.test a {
+    color: #FFF;
+    text-decoration: none;
+    font: 1em Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
     position: relative;
-    width: 33.333%;
-    display: table-cell;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 10px 20px;
-    transition: 0.2s ease color;
+    z-index: 0;
+    cursor: pointer;
 }
 
-nav a:before,
-nav a:after {
-    content: "";
+
+/* Border X get width  */
+
+div.borderXwidth a:before,
+div.borderXwidth a:after {
     position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 0.2s ease transform;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #e85f03;
+    transition: all 0.3s;
 }
 
-nav a:before {
-    top: 0;
-    left: 10px;
-    width: 6px;
-    height: 6px;
+div.borderXwidth a:before {
+    left: 0px;
+    top: 0px;
 }
 
-nav a:after {
-    top: 5px;
-    left: 18px;
-    width: 4px;
-    height: 4px
+div.borderXwidth a:after {
+    right: 0px;
+    bottom: 0px;
 }
 
-#indicator {
-    position: absolute;
-    left: 5%;
-    bottom: 0;
-    width: 30px;
-    height: 3px;
-    background-color: #e85f03;
-    border-radius: 5px;
-    transition: 0.2s ease left;
+div.borderXwidth a:hover:before,
+div.borderXwidth a:hover:after {
+    opacity: 1;
+    width: 100%;
 }
 
-nav a:hover {
-    color: #e85f03;
+a.activeCin:before,
+a.activeC:after {
+    opacity: 1;
+    width: 100%;
 }
 
-nav a:hover:before,
-nav a:hover:after {
-    transform: scale(1);
-}
-
-nav a:nth-child(1):hover~#indicator {
-    background: white;
-}
-
-nav a:nth-child(2):hover~#indicator {
-    left: 34%;
-    background: white;
-}
-
-nav a:nth-child(3):hover~#indicator {
-    left: 70%;
-    background: white;
-}
-
-#ytd-url {
-    display: block;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding: 10px 14px;
-    margin: 20px;
-    color: #fff;
-    font-family: Arial;
-    font-size: 14px;
-    text-decoration: none;
-    background-color: #000;
-    border-radius: 4px;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-    z-index: 125;
+div.test a.activeC:before,
+div.test a.activeC:after {
+    opacity: 1;
+    width: 100%;
 }

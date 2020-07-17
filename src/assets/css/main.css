@@ -506,7 +506,9 @@ body {
     -ms-flex-align: center;
     align-items: center;
     text-decoration: none;
-    color: #fff
+    color: #fff;
+    width: 10%;
+    height: 100%;
 }
 
 .header--logo p {
@@ -514,6 +516,10 @@ body {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase
+}
+
+.nav-bar {
+    margin: auto;
 }
 
 .header--nav-toggle {
@@ -1230,6 +1236,14 @@ body {
 
 .about--options>a:nth-child(3) {
     background-image: url("../img/about-history.jpg")
+}
+
+.about--options>a:nth-child(4) {
+    background-image: url("../img/premium.jpg")
+}
+
+.about--options>a:nth-child(5) {
+    background-image: url("../img/Assurances.jpg")
 }
 
 .about--options>a:hover h3 {
