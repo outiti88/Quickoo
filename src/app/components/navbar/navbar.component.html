@@ -1,8 +1,8 @@
 <nav>
     <div class="test green borderXwidth">
-        <a href="../../../index.html" routerLinkActive="activeC">ACCEUIL</a>
-        <a routerLink="/Quickoo" routerLinkActive="activeC">QUICKOO</a>
-        <a routerLink="/Tarifs" routerLinkActive="activeC">TARIFS</a>
+        <a href="/" [ngClass]="{'activeC' : nav===1}">ACCEUIL</a>
+        <a href="/Quickoo" [ngClass]="{'activeC' : nav===2}">QUICKOO</a>
+        <a href="/Tarifs" [ngClass]="{'activeC' : nav===3}">TARIFS</a>
         <a>CONTACT</a>
     </div>
 </nav>
