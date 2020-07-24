@@ -45,7 +45,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 const appRoutes : Routes =[
   { path: 'Acceuil' , component : HomeComponent  }, 
-  { path: 'Tarifs' , component : TarifComponent  },
+  { path: 'Tarifs' , component : HomeComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: '' , component : HomeComponent  }
 ] ;
