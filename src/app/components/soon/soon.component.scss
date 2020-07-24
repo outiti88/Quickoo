@@ -106,7 +106,8 @@ svg {
     }
 }
 
-@media only screen and (max-width: 830px) {
+
+/*@media only screen and (max-width: 830px) {
     .titre {
         font-size: 4em;
         padding-top: 60px;
@@ -126,5 +127,46 @@ svg {
     }
     .lien {
         padding: 0;
+    }
+}*/
+
+@media only screen and (max-width: 590px) {
+    .intro {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 40px;
+    }
+    .right {
+        width: 100%;
+        height: 50%;
+        padding-bottom: 50px;
+    }
+    .titre {
+        font-size: 4em;
+        margin: 0;
+        padding-top: 40px;
+    }
+    .image {
+        width: 100%;
+        height: 50%;
+    }
+    .rs {
+        width: 10%;
+        padding-right: 10px;
+    }
+    .load {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .pc {
+        width: 100%;
+    }
+    .lien {
+        padding-left: 50px;
+    }
+    .intro {
+        padding-top: 0;
     }
 }
