@@ -38,14 +38,17 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { SoonComponent } from './components/soon/soon.component';
 
 
 
 
 
 const appRoutes : Routes =[
+  { path: 'commingSoon', component: SoonComponent },
+  { path: '**', redirectTo: 'commingSoon' },
   { path: 'Acceuil' , component : HomeComponent  }, 
-  { path: 'Tarifs' , component : HomeComponent  },
+  { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: '' , component : HomeComponent  }
 ] ;
@@ -58,6 +61,7 @@ const appRoutes : Routes =[
     HomeComponent,
     TarifComponent,
     AuthComponent,
+    SoonComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
