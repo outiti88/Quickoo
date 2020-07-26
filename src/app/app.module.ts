@@ -45,12 +45,14 @@ import { SoonComponent } from './components/soon/soon.component';
 
 
 const appRoutes : Routes =[
+  { path: '' , component : HomeComponent  },
   { path: 'ComingSoon', component: SoonComponent },
-  { path: '**', redirectTo: 'ComingSoon' },
   { path: 'Acceuil' , component : HomeComponent  }, 
-  { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
-  { path: '' , component : HomeComponent  }
+  { path: '**', redirectTo: 'ComingSoon' },
+  { path: 'Tarifs' , component : TarifComponent  },
+  
+  
 ] ;
 
 @NgModule({
