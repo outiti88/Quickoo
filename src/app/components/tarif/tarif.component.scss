@@ -130,3 +130,57 @@
     height: 4px;
     background-color: #e85f03
 }
+
+.about--banner h2::before {
+    top: 0px;
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+.about--banner {
+    height: 80%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.storage-prices-box {
+    position: absolute;
+    width: auto;
+    top: 350px;
+    left: 480px;
+    background-color: #fff;
+    display: flex;
+    padding: 22px 28px 19px;
+    border-radius: 8px;
+    box-shadow: 0 1px 32px 0 rgba(0, 0, 0, .1);
+    transition: all 1s ease;
+}
+
+.storage-prices-box .storage-price:not(:last-child) {
+    margin-right: 35px;
+}
+
+.pricingpage .storage-prices-box .storage-label {
+    opacity: .5;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: -.2px;
+}
+
+.storage-prices-box .storage-value {
+    line-height: 1.56;
+    letter-spacing: -.23px;
+}
+
+.duree {
+    color: #000000a6;
+}
+
+.taxe {
+    font-weight: bold;
+    color: black;
+}

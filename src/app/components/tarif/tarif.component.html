@@ -8,7 +8,10 @@
                         <img width="100%" src="assets/img/logo.png" alt="Global">
                     </a>
                     <app-navbar [nav]="3"></app-navbar>
+
+
                     <div class="header--nav-toggle">
+
                         <span></span>
                     </div>
                 </header>
@@ -114,13 +117,37 @@
                             <div class="about--banner">
                                 <div class="row" style="display: flex; justify-content: space-between;">
                                     <div class="col-sm">
-                                        <h2 class="payez">Payez Moins
+                                        <h2 id="pricing" class="payez">Payez Moins
                                         </h2>
-                                        <a href="#0">Calculez vos coûts de préparation <br> et d'expédition de commandes avec Quickoo.
-                        
-                                         </a>
+                                        <p>Calculez vos coûts de préparation et d'expédition de commandes avec Quickoo.
+
+                                        </p>
+                                        <div class="row" style="display: flex ;justify-content: space-between;">
+                                            <div class="col-4">
+                                                <h4>TYPE EMBALLAGE</h4>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Choisissez votre type: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedValue" name="emballage">
+                                                        <mat-option *ngFor="let emballage of emballages" [value]="emballage.value">
+                                                            {{emballage.viewValue}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                                <p>Prix Emballage : {{selectedValue}} MAD</p>
+
+                                            </div>
+                                            <div *ngIf="selectedValue!=0" class="col-4">
+                                                <h4>EMBALLAGE : {{typeEmb }}</h4>
+                                                <mat-radio-group [(ngModel)]="typeEmb">
+                                                    <mat-radio-button value="10">Personnalisé</mat-radio-button>
+                                                    <mat-radio-button value="0">Classique</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+
+
                                     </div>
-                                    <div class="pack" style="padding-left: 250px;">
+                                    <div class="pack">
                                         <div class="event col-sm">
                                             <span>#001</span>
                                             <div class="info">
@@ -128,7 +155,7 @@
 
                                             </div>
                                             <div class="price">
-                                                {{value + 2}} MAD
+                                                {{value + selectedValue + toNumber(typeEmb*selectedValue/selectedValue)}} MAD
                                             </div>
                                         </div>
                                         <div class="event col-sm">
@@ -137,7 +164,7 @@
                                                 Relais J+2 <br />Standard
                                             </div>
                                             <div class="price">
-                                                {{value + 4}} MAD
+                                                {{value + selectedValue + toNumber(typeEmb*selectedValue/selectedValue) + 10}} MAD
                                             </div>
                                         </div>
                                         <div class="event col-sm">
@@ -146,17 +173,68 @@
                                                 Relais J+1 <br />Express
                                             </div>
                                             <div class="price">
-                                                {{value + 6}} MAD
+                                                {{(value + selectedValue +toNumber(typeEmb*selectedValue/selectedValue)) * 2}} MAD
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <p>hey</p>
                                     <div class="play-container">
 
+                                        <div class="row" style="display: flex; justify-content: space-between;">
 
-                                        <section class="example-section">
+
+                                            <div class="col-4" style="width : 30%">
+                                                <h4>LA VILLE </h4>
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Ville</mat-label>
+                                                    <mat-select>
+                                                        <mat-option>None</mat-option>
+                                                        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-4" style="width : 30%">
+                                                <div class="testou" style="display: flex;  justify-content: space-between;">
+                                                    <h4>OBJETS PAR COMMANDE
+                                                    </h4>
+                                                    <mat-form-field class="example-margin" style="width: 30%;">
+                                                        <mat-label>Value</mat-label>
+                                                        <input matInput type="number" [(ngModel)]="value">
+                                                    </mat-form-field>
+                                                </div>
+                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
+                                                </mat-slider>
+                                            </div>
+                                            <div (mouseover)="changeText=true" (mouseout)="changeText=false" class="col-4" style="     height: 50%;
+                                             margin-left:80px; text-align:center; display:flex;justify-content: space-around; width: 40%;">
+                                                <div>
+                                                    <h3>STOCKAGE</h3>
+                                                </div>
+                                                <div>
+                                                    <h3><span style="color: #e85f03;">Gratuit</span> pour 15 jours</h3>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="changeText" class="storage-prices-box" style="display: flex;">
+                                                <div class="storage-price">
+                                                    <div class="storage-label"><span class="duree">&lt; 2 sem.</span></div>
+                                                    <div class="storage-value blue"><span class="taxe" style="color: #e85f03;">Gratuit</span></div>
+                                                </div>
+                                                <div class="storage-price">
+                                                    <div class="storage-label"><span class="duree">2s - 3m</span></div>
+                                                    <div class="storage-value"><span class="taxe">18€/m³/m</span></div>
+                                                </div>
+                                                <div class="storage-price">
+                                                    <div class="storage-label"><span class="duree">3 - 12 m</span></div>
+                                                    <div class="storage-value"><span class="taxe">50€/m³/m</span></div>
+                                                </div>
+                                                <div class="storage-price">
+                                                    <div class="storage-label"><span class="duree">12+ m</span></div>
+                                                    <div class="storage-value"><span class="taxe">100€/m³/m</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--  <section class="example-section">
                                             <mat-form-field class="example-margin">
                                                 <mat-label>Value</mat-label>
                                                 <input matInput type="number" [(ngModel)]="value">
@@ -174,23 +252,8 @@
                                                 <input matInput type="number" [(ngModel)]="step">
                                             </mat-form-field>
                                         </section>
+ -->
 
-                                        <div class="row" style="display: flex; justify-content: space-between;">
-                                            <div class="col-6">
-                                                <h4>Commandes par mois {{value}}
-                                                </h4>
-
-                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
-                                                </mat-slider>
-                                            </div>
-                                            <div class="col-6">
-                                                <h4>Objets par commande {{value}}
-                                                </h4>
-
-                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
-                                                </mat-slider>
-                                            </div>
-                                        </div>
 
 
                                     </div>
