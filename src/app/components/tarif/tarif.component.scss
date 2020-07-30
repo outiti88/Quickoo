@@ -184,3 +184,106 @@
     font-weight: bold;
     color: black;
 }
+
+.combien {
+    width: 50%;
+    ;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.moins {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ville {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colone {
+    width: 30%;
+}
+
+.stock {
+    height: 50%;
+    margin-left: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+@media (max-width: 700px) {
+    .combien {
+        width: 100%;
+    }
+    .block {
+        display: block;
+    }
+    .emballa {
+        width: 65%;
+    }
+    .pack {
+        width: 30%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    .event {
+        width: 100px;
+        height: 30px;
+        margin-bottom: 40px;
+    }
+    .event:before {
+        display: block;
+        width: auto;
+        height: 40px;
+        position: relative;
+        top: 12px;
+        left: 2px;
+    }
+    .event>span {
+        width: 17px;
+        top: -55px;
+        left: auto;
+    }
+    .event>.info {
+        top: -65px;
+        left: 40px;
+    }
+    .event>.price {
+        width: 60px;
+        top: -65px;
+        left: 15px;
+    }
+    .event[_ngcontent-wda-c89]:after {
+        width: 125px;
+        height: 60px;
+        top: -136px;
+        padding: 0;
+    }
+    .ville {
+        display: flex;
+        width: 100%;
+        flex-flow: wrap;
+    }
+    .colone {
+        width: 50%;
+    }
+    .testou {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+    .mdina {
+        width: 90%;
+    }
+    .nomarg {
+        margin: 0;
+    }
+}

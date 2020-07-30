@@ -17,3 +17,31 @@
     height: 4px;
     background-color: #e85f03
 }
+
+.text {
+    width: 55%;
+}
+
+@media (max-width: 600px) {
+    .text {
+        width: 100%;
+    }
+    .client {
+        margin-top: 90px;
+    }
+}
+
+.pc {
+    bottom: -30px;
+    right: -180px;
+}
+
+@media (max-width: 900px) {
+    .pc {
+        bottom: 0;
+        right: 0;
+    }
+    h1 {
+        font-size: 3em;
+    }
+}

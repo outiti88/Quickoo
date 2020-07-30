@@ -7,7 +7,23 @@
                     <a class="header--logo" href="#0">
                         <img width="100%" src="assets/img/logo.png" alt="Global">
                     </a>
-                    <app-navbar [nav]="2"></app-navbar>
+                    <div class="nav-bar">
+                        <app-navbar [nav]="2"></app-navbar>
+                    </div>
+                    <a class="espace" href="/ComingSoon" target="_blank" class="espace" style="
+                    color: #FFF;
+                    text-decoration: none;
+                    margin: 0px 10px;
+                    padding: 10px 10px;
+                    z-index: 0;
+                    cursor: pointer;
+                    background-color: #e85f03;
+                    width: auto;
+                    text-align: center;
+                    font-weight: bold;
+                    border-radius: 10px;
+                  
+                ">MON ESPACE</a>
                     <div class="header--nav-toggle">
                         <span></span>
                     </div>
@@ -29,13 +45,13 @@
                                 <div class="text" style="margin-bottom: 60px;">
                                     <p>
                                         - <span style=" color:#e85f03"><b>QUICKOO</b></span> est le partenaire de croissance idéal.</p>
-                                    <p style="width: 55%;">- Notre plateforme permet aux e-commerçants de passer moins de temps à gérer leur logistique tout en gardant un maximum de contrôle.
+                                    <p>- Notre plateforme permet aux e-commerçants de passer moins de temps à gérer leur logistique tout en gardant un maximum de contrôle.
                                     </p>
                                     <p>
                                         - Concentrez-vous sur la croissance de vos ventes, gardez vos dépenses sous contrôle et livrez vos clients en temps voulu.
                                     </p>
                                 </div>
-                                <div style="padding-left:50px ;" class="image"> <img width="80% " style="bottom: -30px; right: -180px;" src="assets/img/pc.png " alt="Welcome ">
+                                <div style="padding-left:50px ;" class="image"> <img class="pc" width="80% " src="assets/img/pc.png " alt="Welcome ">
 
                                 </div>
                             </div>
@@ -44,9 +60,9 @@
                     </li>
                     <li class="l-section section ">
                         <div class="about ">
-                            <div class="intro--banner">
+                            <div class="intro--banner client">
                                 <h1><span style="color: #e85f03;">Améliorez</span><br> votre satisfaction<br><span style="color: #e85f03;">client</span>.</h1>
-                                <div class="text" style="margin-bottom: 60px; width:55%">
+                                <div class="text" style="margin-bottom: 60px;">
                                     <p>
                                         - <span style=" color:#e85f03"><b>QUICKOO</b></span> vous garantit l'expédition de l'intégralité de vos commandes sur le jour que vous choisissez, peu importe la quantité ou la destination.
                                     </p>
@@ -61,7 +77,7 @@
                                         - Accédez à des délais de livraison parmi les plus bas du marché.
                                     </p>
                                 </div>
-                                <div style="padding-left:50px ;" class="image"> <img width="80% " style="bottom: -50px; right: -180px;" src="assets/img/info2.png " alt="Welcome ">
+                                <div style="padding-left:50px ;" class="image"> <img width="80% " class="pc" src="assets/img/info2.png " alt="Welcome ">
 
                                 </div>
                             </div>
@@ -75,7 +91,7 @@
                                     <p>
                                         - Nous collectons vos produits en moins de temps.
                                     </p>
-                                    <p style="width: 50%;">
+                                    <p>
                                         - Nos algorithmes nous permettent de choisir le mode de transport adapté à la collecte de vos produits.
 
                                     </p>
@@ -83,7 +99,7 @@
                                         - Passez plus de temps avec vos clients et moins à emballer et à déposer vos colis en bureau de Poste.
                                     </p>
                                 </div>
-                                <div style="padding-left:50px ;" class="image"> <img width="80% " style="bottom: -50px; right: -180px;" src="assets/img/ravon2.png " alt="Welcome ">
+                                <div style="padding-left:50px ;" class="image"> <img width="80% " class="pc" src="assets/img/ravon2.png " alt="Welcome ">
 
                                 </div>
                             </div>
@@ -95,7 +111,7 @@
                             <div class="intro--banner">
                                 <h1>Des
                                     <span style="color: #e85f03;">emballages</span><br> adaptés <br>à vos <span style="color: #e85f03;">produits</span>.</h1>
-                                <div class="text" style="margin-bottom: 60px; width: 50%;">
+                                <div class="text" style="margin-bottom: 60px;">
                                     <p>
                                         - Des vêtements aux chaussures en passant par les produits cosmétiques et les bijoux, nous emballons tous types de produits.
                                     </p>
@@ -105,7 +121,7 @@
                                     </p>
 
                                 </div>
-                                <div style="padding-left:50px ;" class="image"> <img width="70% " style="bottom: -30px; right: -180px;" src="assets/img/main.png " alt="Welcome ">
+                                <div style="padding-left:50px ;" class="image"> <img width="70% " class="pc" src="assets/img/main.png " alt="Welcome ">
 
                                 </div>
                             </div>
@@ -116,7 +132,7 @@
                             <div class="intro--banner">
                                 <h1>Comprenez <br><span style="color: #e85f03;">vos coûts </span><br>en un clin d'oeil.</h1>
                                 <div class="text" style="margin-bottom: 60px;">
-                                    <div class="text" style="margin-bottom: 60px; width: 50%;">
+                                    <div class="text" style="margin-bottom: 60px; width : 100%">
                                         <p>
                                             - Parce que Quickoo devient votre unique interlocuteur logistique, vous n'avez plus à additionner vos factures pour connaître vos coûts logistiques.
                                         </p>
@@ -127,7 +143,7 @@
 
                                     </div>
                                 </div>
-                                <div style="padding-left:50px ;" class="image"> <img width="80% " style="bottom: -50px; right: -180px;" src="assets/img/info.png " alt="Welcome ">
+                                <div style="padding-left:50px ;" class="image"> <img width="80% " class="pc" src="assets/img/info.png " alt="Welcome ">
 
                                 </div>
                             </div>
@@ -138,10 +154,9 @@
         </div>
     </div>
     <ul class="outer-nav ">
-        <li class="is-active"><span>Logistique</span></li>
-        <li><span>Vos Clients</span></li>
-        <li><span>Collecte</span></li>
-        <li><span>Emballage</span></li>
-        <li><span>Coûts</span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/" >ACCEUIL</a></span></li>
+        <li class="is-active"><span><a style="text-decoration: none; color:#FFF" href="/Quickoo" >QUICKOO</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Tarifs" >TARIFS</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Service" >SERVICE</a></span></li>
     </ul>
 </div>

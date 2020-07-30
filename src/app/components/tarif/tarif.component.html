@@ -7,9 +7,24 @@
                     <a class="header--logo" href="#0">
                         <img width="100%" src="assets/img/logo.png" alt="Global">
                     </a>
-                    <app-navbar [nav]="3"></app-navbar>
+                    <div class="nav-bar">
+                        <app-navbar [nav]="3"></app-navbar>
+                    </div>
 
-
+                    <a class="espace" href="/ComingSoon" target="_blank" class="espace" style="
+                    color: #FFF;
+                    text-decoration: none;
+                    margin: 0px 10px;
+                    padding: 10px 10px;
+                    z-index: 0;
+                    cursor: pointer;
+                    background-color: #e85f03;
+                    width: auto;
+                    text-align: center;
+                    font-weight: bold;
+                    border-radius: 10px;
+                  
+                ">MON ESPACE</a>
                     <div class="header--nav-toggle">
 
                         <span></span>
@@ -29,7 +44,7 @@
                         <div style="padding-top:30px ;" class="intro">
                             <div class="intro--banner">
                                 <h1><span style="color: #e85f03;">PAYER</span><br> LE JUSTE <br> <span style="color: #e85f03;">PRIX</span></h1>
-                                <p style="width: 50%; ">
+                                <p class="combien">
                                     Profitez de nos tarifs négociés sur l’emballage et le transport pour diminuer vos coûts. Contactez-nous pour bénéficier d’un devis personnalisé.
 
                                 </p>
@@ -115,17 +130,17 @@
                     <li class="l-section section">
                         <div class="about">
                             <div class="about--banner">
-                                <div class="row" style="display: flex; justify-content: space-between;">
+                                <div class="row block">
                                     <div class="col-sm">
                                         <h2 id="pricing" class="payez">Payez Moins
                                         </h2>
                                         <p>Calculez vos coûts de préparation et d'expédition de commandes avec Quickoo.
 
                                         </p>
-                                        <div class="row" style="display: flex ;justify-content: space-between;">
+                                        <div class="row moins">
                                             <div class="col-4">
                                                 <h4>TYPE EMBALLAGE</h4>
-                                                <mat-form-field appearance="fill">
+                                                <mat-form-field appearance="fill" class="emballa">
                                                     <mat-label>Choisissez votre type: </mat-label>
                                                     <mat-select [(ngModel)]="selectedValue" name="emballage">
                                                         <mat-option *ngFor="let emballage of emballages" [value]="emballage.value">
@@ -181,12 +196,12 @@
                                 <div>
                                     <div class="play-container">
 
-                                        <div class="row" style="display: flex; justify-content: space-between;">
+                                        <div class="row ville">
 
 
-                                            <div class="col-4" style="width : 30%">
+                                            <div class="col-4 colone">
                                                 <h4>LA VILLE </h4>
-                                                <mat-form-field appearance="fill">
+                                                <mat-form-field appearance="fill" class="mdina">
                                                     <mat-label>Ville</mat-label>
                                                     <mat-select>
                                                         <mat-option>None</mat-option>
@@ -194,11 +209,11 @@
                                                     </mat-select>
                                                 </mat-form-field>
                                             </div>
-                                            <div class="col-4" style="width : 30%">
-                                                <div class="testou" style="display: flex;  justify-content: space-between;">
+                                            <div class="col-4 colone">
+                                                <div class="testou moins">
                                                     <h4>OBJETS PAR COMMANDE
                                                     </h4>
-                                                    <mat-form-field class="example-margin" style="width: 30%;">
+                                                    <mat-form-field class="example-margin colone nomarg">
                                                         <mat-label>Value</mat-label>
                                                         <input matInput type="number" [(ngModel)]="value">
                                                     </mat-form-field>
@@ -206,8 +221,7 @@
                                                 <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
                                                 </mat-slider>
                                             </div>
-                                            <div (mouseover)="changeText=true" (mouseout)="changeText=false" class="col-4" style="     height: 50%;
-                                             margin-left:80px; text-align:center; display:flex;justify-content: space-around; width: 40%;">
+                                            <div (mouseover)="changeText=true" (mouseout)="changeText=false" class="col-4 stock">
                                                 <div>
                                                     <h3>STOCKAGE</h3>
                                                 </div>
@@ -295,10 +309,9 @@
         </div>
     </div>
     <ul class="outer-nav ">
-        <li class="is-active"><span>Combien ?</span></li>
-        <li><span>Nos offres</span></li>
-        <li><span>Nos Tarifs</span></li>
-        <li>Contact</li>
-        <li>Hire us</li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/" >ACCEUIL</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Quickoo" >QUICKOO</a></span></li>
+        <li class="is-active"><span><a style="text-decoration: none; color:#FFF" href="/Tarifs" >TARIFS</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Service" >SERVICE</a></span></li>
     </ul>
 </div>

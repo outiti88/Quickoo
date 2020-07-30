@@ -50,3 +50,13 @@ div.test a.activeC:after {
     opacity: 1;
     width: 100%;
 }
+
+@media (max-width: 700px) {
+    .navbar {
+        display: none;
+    }
+    .espace {
+        width: auto;
+        left: auto;
+    }
+}

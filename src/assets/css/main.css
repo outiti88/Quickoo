@@ -1803,6 +1803,9 @@ body {
     .outer-nav>li {
         font-size: 44px
     }
+    .header--logo {
+        width: 20%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1829,4 +1832,10 @@ body {
 .outer-nav li.is-vis:nth-child(5) {
     -webkit-transition-delay: .16s;
     transition-delay: .16s
+}
+
+@media (min-width: 700px) {
+    .header--nav-toggle {
+        display: none;
+    }
 }
