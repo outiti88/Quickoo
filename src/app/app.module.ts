@@ -51,6 +51,7 @@ const appRoutes : Routes =[
   { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: 'Service' , component : ServiceComponent  },
+  { path: 'Auth' , component : AuthComponent  }, 
   { path: '' , component : HomeComponent  },
   { path: '**', redirectTo: 'ComingSoon' }
 

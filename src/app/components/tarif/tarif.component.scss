@@ -1,289 +1,293 @@
-.example-h2 {
-    margin: 0 8px 16px;
-}
-
-.example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-}
-
-.example-margin {
-    margin: 8px;
-}
-
-.mat-slider-horizontal {
-    width: 300px;
-}
-
-.mat-slider-vertical {
-    height: 300px;
-}
-
-.mat-card+.mat-card {
-    margin-top: 8px;
-}
-
-.example-result-card h2 {
-    margin: 0 8px;
-}
-
-.event {
-    width: 300px;
-    height: 50px;
-    background: #fff;
-    border: 1px solid #CCC;
-    border-radius: 2px;
-    margin-bottom: 50px;
-}
-
-.event:before {
-    content: '';
-    display: block;
-    width: 295px;
-    height: 70px;
-    background: #fff;
-    border: 1px solid #CCC;
-    border-radius: 2px;
-    transform: rotate(2deg);
-    position: relative;
-    top: 12px;
-    left: 2px;
-    z-index: -1;
-}
-
-.event:after {
-    content: '';
-    display: block;
-    width: 295px;
-    height: 75px;
-    background: #fff;
-    border: 1px solid #CCC;
-    border-radius: 2px;
-    transform: rotate(-2deg);
-    position: relative;
-    top: -136px;
-    z-index: -2;
-}
-
-.event>span {
-    display: block;
-    width: 30px;
-    background: #e85f03;
-    position: relative;
-    top: -55px;
-    left: -15px;
-    /* Text */
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 7px;
-    text-align: right;
-}
-
-.event>.info {
-    display: inline-block;
-    position: relative;
-    top: -75px;
-    left: 40px;
-    /* Text */
-    color: #232323;
-    font-weight: 600;
-    line-height: 25px;
-}
-
-.event>.info:first-line {
-    text-transform: uppercase;
-    font-size: 10px;
-    margin: 10px 0 0 0;
-    font-weight: 700;
-}
-
-.event>.price {
-    display: inline-block;
-    width: 60px;
-    position: relative;
-    top: -85px;
-    left: 115px;
-    /* Text */
-    color: #e85f03;
-    text-align: center;
-    font-weight: 700;
-}
-
-.intro--banner::before {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    left: -15px;
-    right: 0;
-    height: 2px;
-    background-color: #282828
-}
-
-.intro--banner::after {
-    content: "";
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #e85f03
-}
-
-.about--banner h2::before {
-    top: 0px;
-}
-
-.mat-radio-button~.mat-radio-button {
-    margin-left: 16px;
-}
-
-.about--banner {
-    height: 80%;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.storage-prices-box {
-    position: absolute;
-    width: auto;
-    top: 350px;
-    left: 480px;
-    background-color: #fff;
-    display: flex;
-    padding: 22px 28px 19px;
-    border-radius: 8px;
-    box-shadow: 0 1px 32px 0 rgba(0, 0, 0, .1);
-    transition: all 1s ease;
-}
-
-.storage-prices-box .storage-price:not(:last-child) {
-    margin-right: 35px;
-}
-
-.pricingpage .storage-prices-box .storage-label {
-    opacity: .5;
-    font-size: 14px;
-    line-height: 2;
-    letter-spacing: -.2px;
-}
-
-.storage-prices-box .storage-value {
-    line-height: 1.56;
-    letter-spacing: -.23px;
-}
-
-.duree {
-    color: #000000a6;
-}
-
-.taxe {
-    font-weight: bold;
-    color: black;
-}
-
-.combien {
-    width: 50%;
-    ;
-}
-
-.block {
-    display: flex;
-    justify-content: space-between;
-}
-
-.moins {
-    display: flex;
-    justify-content: space-between;
-}
-
-.ville {
-    display: flex;
-    justify-content: space-between;
-}
-
-.colone {
-    width: 30%;
-}
-
-.stock {
-    height: 50%;
-    margin-left: 80px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-}
-
-@media (max-width: 700px) {
-    .combien {
+    .example-h2 {
+        margin: 0 8px 16px;
+    }
+    
+    .example-section {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 60px;
+    }
+    
+    .example-margin {
+        margin: 8px;
+    }
+    
+    .mat-slider-horizontal {
         width: 100%;
     }
-    .block {
-        display: block;
+    
+    .mat-slider-vertical {
+        height: 300px;
     }
-    .emballa {
-        width: 65%;
+    
+    .mat-card+.mat-card {
+        margin-top: 8px;
     }
-    .pack {
-        width: 30%;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
+    
+    .example-result-card h2 {
+        margin: 0 8px;
     }
+    
     .event {
-        width: 100px;
-        height: 30px;
-        margin-bottom: 40px;
+        width: 300px;
+        height: 50px;
+        background: #fff;
+        border: 1px solid #CCC;
+        border-radius: 2px;
+        margin-bottom: 50px;
     }
+    
     .event:before {
+        content: '';
         display: block;
-        width: auto;
-        height: 40px;
+        width: 295px;
+        height: 70px;
+        background: #fff;
+        border: 1px solid #CCC;
+        border-radius: 2px;
+        transform: rotate(2deg);
         position: relative;
         top: 12px;
         left: 2px;
+        z-index: -1;
     }
-    .event>span {
-        width: 17px;
-        top: -55px;
-        left: auto;
-    }
-    .event>.info {
-        top: -65px;
-        left: 40px;
-    }
-    .event>.price {
-        width: 60px;
-        top: -65px;
-        left: 15px;
-    }
-    .event[_ngcontent-wda-c89]:after {
-        width: 125px;
-        height: 60px;
-        top: -136px;
-        padding: 0;
-    }
-    .ville {
-        display: flex;
+    
+    .event:after {
+        content: '';
+        display: block;
         width: 100%;
-        flex-flow: wrap;
+        height: 75px;
+        background: #fff;
+        border: 1px solid #CCC;
+        border-radius: 2px;
+        transform: rotate(-2deg);
+        position: relative;
+        top: -136px;
+        z-index: -2;
     }
-    .colone {
+    
+    .event>span {
+        display: block;
+        width: 30px;
+        background: #e85f03;
+        position: relative;
+        top: -55px;
+        left: -15px;
+        /* Text */
+        color: #fff;
+        font-size: 10px;
+        padding: 2px 7px;
+        text-align: right;
+    }
+    
+    .event>.info {
+        display: inline-block;
+        position: relative;
+        top: -75px;
+        left: 40px;
+        /* Text */
+        color: #232323;
+        font-weight: 600;
+        line-height: 25px;
+    }
+    
+    .event>.info:first-line {
+        text-transform: uppercase;
+        font-size: 10px;
+        margin: 10px 0 0 0;
+        font-weight: 700;
+    }
+    
+    .event>.price {
+        display: inline-block;
+        width: 60px;
+        position: relative;
+        top: -85px;
+        left: 115px;
+        /* Text */
+        color: #e85f03;
+        text-align: center;
+        font-weight: 700;
+    }
+    
+    .intro--banner::before {
+        content: "";
+        position: absolute;
+        bottom: 20px;
+        left: -15px;
+        right: 0;
+        height: 2px;
+        background-color: #282828
+    }
+    
+    .intro--banner::after {
+        content: "";
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        width: 30px;
+        height: 4px;
+        background-color: #e85f03
+    }
+    
+    .about--banner h2::before {
+        top: 0px;
+    }
+    
+    .mat-radio-button~.mat-radio-button {
+        margin-left: 16px;
+    }
+    
+    .about--banner {
+        height: 80%;
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .storage-prices-box {
+        position: absolute;
+        width: auto;
+        top: 350px;
+        left: 480px;
+        background-color: #fff;
+        display: flex;
+        padding: 22px 28px 19px;
+        border-radius: 8px;
+        box-shadow: 0 1px 32px 0 rgba(0, 0, 0, .1);
+        transition: all 1s ease;
+    }
+    
+    .storage-prices-box .storage-price:not(:last-child) {
+        margin-right: 35px;
+    }
+    
+    .pricingpage .storage-prices-box .storage-label {
+        opacity: .5;
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: -.2px;
+    }
+    
+    .storage-prices-box .storage-value {
+        line-height: 1.56;
+        letter-spacing: -.23px;
+    }
+    
+    .duree {
+        color: #000000a6;
+    }
+    
+    .taxe {
+        font-weight: bold;
+        color: black;
+    }
+    
+    .combien {
         width: 50%;
+        ;
     }
-    .testou {
+    
+    .block {
         display: flex;
         justify-content: space-between;
-        padding-top: 20px;
     }
-    .mdina {
-        width: 90%;
+    
+    .moins {
+        display: flex;
+        justify-content: space-between;
     }
-    .nomarg {
-        margin: 0;
+    
+    .ville {
+        display: flex;
+        justify-content: space-between;
     }
-}
+    
+    .colone {
+        width: 30%;
+    }
+    
+    .stock {
+        height: 50%;
+        margin-left: 80px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+    }
+    
+    @media (max-width: 700px) {
+        .combien {
+            width: 100%;
+        }
+        .block {
+            display: block;
+        }
+        .emballa {
+            width: 65%;
+        }
+        .pack {
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        .event {
+            width: 30%;
+            height: 30px;
+            margin-bottom: 40px;
+        }
+        .event:before {
+            display: block;
+            width: auto;
+            height: 40px;
+            position: relative;
+            top: 12px;
+            left: 2px;
+        }
+        .event>span {
+            width: 17px;
+            top: -55px;
+            left: auto;
+        }
+        .event>.info {
+            top: -65px;
+            left: 40px;
+        }
+        .event>.price {
+            width: 60px;
+            top: -65px;
+            left: 15px;
+        }
+        .event[_ngcontent-wda-c89]:after {
+            width: 125px;
+            height: 60px;
+            top: -136px;
+            padding: 0;
+        }
+        .ville {
+            display: flex;
+            width: 100%;
+            flex-flow: wrap;
+        }
+        .colone {
+            width: 50%;
+        }
+        .testou {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+        }
+        .mdina {
+            width: 90%;
+        }
+        .nomarg {
+            margin: 0;
+        }
+        .stock {
+            margin-left: 0px;
+            width: 100%;
+        }
+    }
