@@ -5,6 +5,16 @@ interface Emballage {
   viewValue: string;
 }
 
+interface Ville {
+  value: number;
+  name: string;
+}
+interface Region {
+  value: number;
+  name: string;
+}
+
+
 
 @Component({
   selector: 'app-tarif',
@@ -12,8 +22,10 @@ interface Emballage {
   styleUrls: ['./tarif.component.scss']
 })
 export class TarifComponent implements OnInit  {
-
+  selectedVille : number =0 ;
   selectedValue: number = 0;
+  selectedRegion : number = 0 ;
+
   selectedCar: string;
   autoTicks = false;
   disabled = false;
@@ -23,8 +35,10 @@ export class TarifComponent implements OnInit  {
   showTicks = false;
   step = 1;
   thumbLabel = true;
-  value = this.min +1;
+  value = 0;
   tickInterval = 1;
+
+
   valeur : number = this.selectedValue + this.value;
   typeEmb : number = 0 ;
   changeText : boolean = false ;
@@ -41,7 +55,13 @@ export class TarifComponent implements OnInit  {
     return isNaN(x) ? 0 : x ;
   }
 
- 
+  
+  regions : Region[] = [
+    {value: 1, name : 'Region de Tanger'},
+    {value: 2, name : 'Region de Kenitra'}
+  ];
+
+
 
   emballages: Emballage[] = [
     {value: 0, viewValue: 'Sans'},
@@ -49,27 +69,35 @@ export class TarifComponent implements OnInit  {
     {value: 10, viewValue: 'Sachet'},
     {value: 15, viewValue: 'Enveloppe'}
   ];
-  states: string[] = ['Tanger',
-    'Ksar Sghir',
-    'Ksar El Kébir',
-    'Melloussa ',
-    'Gueznaia',
-    'Martil',
-    'Assilah',
-    'Tétouan',
-     'Larache' ,
-     'Mdiq-Fnideq',
-     'Chefchaouen',
-    'Kénitra',
-    'Lalla Mimouna',
-    'Souk Tleta El Gharb',
-    'Sidi Slimane',
-    'Sidi Yahya',
-    'Souk El Arbaa Du Rharb',
-    'Moulay Bouselham',
-    'Sidi Taibi',
-    'Allal Tazi'
+
+
+  tanger : Ville[] = 
+  [
+    {value: 19, name : 'Tanger'},
+    {value: 29, name : 'Ksar Sghir'},
+    {value: 29, name : 'Melloussa'},
+    {value: 29, name : 'Ksar El Kébir'},
+    {value: 29, name : 'Gueznaia'},
+    {value: 29, name : 'Martil'},
+    {value: 29, name : 'Assilah'},
+    {value: 29, name : 'Tétouan'},
+    {value: 29, name : 'Larache'},
+    {value: 29, name : 'M\'diq-Fnideq'},
+    {value: 29, name : 'Chefchaouen'}
   ];
+  kenitra : Ville[] = 
+  [
+    {value: 19, name : 'Kénitra'},
+    {value: 29, name : 'Lalla Mimouna'},
+    {value: 29, name : 'Souk Tleta El Gharb'},
+    {value: 29, name : 'Sidi Slimane'},
+    {value: 29, name : 'Sidi Yahya'},
+    {value: 29, name : 'Souk El Arbaa Du Rharb'},
+    {value: 29, name : 'Moulay Bouselham'},
+    {value: 29, name : 'Sidi Taibi'},
+    {value: 29, name : 'Allal Tazi'}
+  ];
+
 
 
 

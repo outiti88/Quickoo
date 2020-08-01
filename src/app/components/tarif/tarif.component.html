@@ -148,11 +148,10 @@
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field>
-                                                <p>Prix Emballage : {{selectedValue}} MAD</p>
 
                                             </div>
                                             <div *ngIf="selectedValue!=0" class="col-4">
-                                                <h4>EMBALLAGE : {{typeEmb }}</h4>
+                                                <h4>EMBALLAGE : {{typeEmb }}MAD</h4>
                                                 <mat-radio-group [(ngModel)]="typeEmb">
                                                     <mat-radio-button value="10">Personnalisé</mat-radio-button>
                                                     <mat-radio-button value="0">Classique</mat-radio-button>
@@ -170,7 +169,7 @@
 
                                             </div>
                                             <div class="price">
-                                                {{value + selectedValue + toNumber(typeEmb*selectedValue/selectedValue)}} MAD
+                                                {{value + selectedValue + selectedVille + toNumber(typeEmb*selectedValue/selectedValue)}} MAD
                                             </div>
                                         </div>
                                         <div class="event col-sm">
@@ -179,7 +178,7 @@
                                                 Relais J+2 <br />Standard
                                             </div>
                                             <div class="price">
-                                                {{value + selectedValue + toNumber(typeEmb*selectedValue/selectedValue) + 10}} MAD
+                                                {{(value + selectedValue + selectedVille +toNumber(typeEmb*selectedValue/selectedValue)) * 2}} MAD
                                             </div>
                                         </div>
                                         <div class="event col-sm">
@@ -188,7 +187,7 @@
                                                 Relais J+1 <br />Express
                                             </div>
                                             <div class="price">
-                                                {{(value + selectedValue +toNumber(typeEmb*selectedValue/selectedValue)) * 2}} MAD
+                                                {{(value + selectedValue + selectedVille +toNumber(typeEmb*selectedValue/selectedValue)) * 3}} MAD
                                             </div>
                                         </div>
                                     </div>
@@ -199,16 +198,58 @@
                                         <div class="row ville">
 
 
-                                            <div class="col-4 colone">
-                                                <h4>LA VILLE </h4>
+                                            <div *ngIf="selectedRegion==0" class="col-4 colone">
+                                                <h4>Nom de Region </h4>
                                                 <mat-form-field appearance="fill" class="mdina">
-                                                    <mat-label>Ville</mat-label>
-                                                    <mat-select>
-                                                        <mat-option>None</mat-option>
-                                                        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                                                    <mat-label>Choisissez la region: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedRegion" name="region">
+                                                        <mat-option *ngFor="let region of regions" [value]="region.value">
+                                                            {{region.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+
+                                            </div>
+
+
+
+
+                                            <div *ngIf="selectedRegion == 1" class="col-4 colone">
+                                                <h4>Villes de la
+                                                    <span (click)="this.selectedRegion = 0;" style="cursor: pointer; color: #e85f03;">
+                                                    -Region de Tanger-
+                                                </span>
+
+                                                </h4>
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label>Choisissez la ville: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
+                                                        <mat-option *ngFor="let ville of tanger" [value]="ville.value">
+                                                            {{ville.name}}
+                                                        </mat-option>
                                                     </mat-select>
                                                 </mat-form-field>
                                             </div>
+
+                                            <div *ngIf="selectedRegion == 2" class="col-4 colone">
+                                                <h4>Villes de la
+                                                    <span (click)="this.selectedRegion = 0;" style="cursor: pointer; color: #e85f03;">
+                                                    -Region de Kenitra-
+                                                </span>
+
+                                                </h4>
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label>Choisissez la ville: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
+                                                        <mat-option *ngFor="let ville of kenitra" [value]="ville.value">
+                                                            {{ville.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+
+
+
                                             <div class="col-4 colone">
                                                 <div class="testou moins">
                                                     <h4>OBJETS PAR COMMANDE
@@ -236,15 +277,15 @@
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">2s - 3m</span></div>
-                                                    <div class="storage-value"><span class="taxe">18€/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">180MAD/m³/m</span></div>
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">3 - 12 m</span></div>
-                                                    <div class="storage-value"><span class="taxe">50€/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">500MAD/m³/m</span></div>
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">12+ m</span></div>
-                                                    <div class="storage-value"><span class="taxe">100€/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">1000MAD/m³/m</span></div>
                                                 </div>
                                             </div>
                                         </div>
