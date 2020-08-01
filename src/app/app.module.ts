@@ -47,14 +47,14 @@ import { ServiceComponent } from './service/service.component';
 
 const appRoutes : Routes =[
   { path: 'ComingSoon', component: SoonComponent },
+  { path: '**', redirectTo: 'ComingSoon' },
+
   { path: 'Acceuil' , component : HomeComponent  }, 
   { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: 'Service' , component : ServiceComponent  },
   { path: 'Auth' , component : AuthComponent  }, 
-  { path: '' , component : HomeComponent  },
-  { path: '**', redirectTo: 'ComingSoon' }
-
+  { path: '' , component : HomeComponent  }
 ] ;
 
 @NgModule({
