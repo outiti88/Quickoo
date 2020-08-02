@@ -48,7 +48,6 @@ import { ServiceComponent } from './service/service.component';
 const appRoutes : Routes =[
   { path: 'ComingSoon', component: SoonComponent },
   { path: '**', redirectTo: 'ComingSoon' },
-
   { path: 'Acceuil' , component : HomeComponent  }, 
   { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
