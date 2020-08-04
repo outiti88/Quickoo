@@ -1,0 +1,37 @@
+.line {
+    width: 100%;
+    border-style: solid;
+    border-color: #e85f03;
+}
+
+.intro--banner {
+    justify-content: space-between;
+}
+
+.titre {
+    font-size: 4.5em;
+    text-align: center;
+    padding-top: 35px;
+}
+
+.top-line {
+    width: 82%;
+    border-top-color: #e85f03;
+    border-top-style: solid;
+    border-top-width: 39px;
+    position: absolute;
+    top: -16px;
+}
+
+@media (max-width: 800px) {
+    .top-line {
+        display: none;
+    }
+    .image-gauche {
+        display: none;
+        ;
+    }
+    .titre {
+        padding-top: 0px;
+    }
+}

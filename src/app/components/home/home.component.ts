@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit , OnDestroy {
 
   }
 
+  
+
   write(n : number){
     this.indis = true;
     switch (n) {

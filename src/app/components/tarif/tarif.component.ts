@@ -49,12 +49,20 @@ export class TarifComponent implements OnInit  {
 
   ngOnInit(): void {
   }
- 
+
+  
 
   toNumber(x : number): number {
+    console.log(this.value);
     return isNaN(x) ? 0 : x ;
   }
 
+  tarif(n : number) {
+    if(this.value < 100)
+    return (this.value + this.selectedValue + this.selectedVille + this.toNumber(this.typeEmb*this.selectedValue/this.selectedValue)) * n + " MAD"
+    else 
+    return "Contactez Nous";
+  }
   
   regions : Region[] = [
     {value: 1, name : 'Region de Tanger'},
