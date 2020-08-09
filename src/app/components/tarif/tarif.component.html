@@ -1,4 +1,4 @@
-<div class="perspective effect-rotate-left">
+<div class="perspective effect-rotate-left" *ngIf="!devis">
     <div class="container">
         <div class="outer-nav--return"></div>
         <div id="viewport" class="l-viewport">
@@ -32,11 +32,10 @@
                 </header>
                 <nav class="l-side-nav">
                     <ul class="side-nav">
-                        <li class="is-active"><span>Combien ?</span></li>
+                        <li class="is-active"><span>Tarif</span></li>
                         <li><span>Nos offres</span></li>
-                        <li><span>Nos Tarifs</span></li>
-                        <li><span>Contact</span></li>
-                        <li><span>Hire us</span></li>
+                        <li><span>Simulateur</span></li>
+                        <li><span>Vos questions</span></li>
                     </ul>
                 </nav>
                 <ul class="l-main-content main-content">
@@ -77,7 +76,7 @@
                                                 <img src="assets/img/1.jpg" alt="Victory">
                                             </div>
                                             <p class="slider--item-title">Collecte, Livraison</p>
-                                            <p class="slider--item-description">Entreprise de vente des materiaux sportifs.</p>
+                                            <p class="slider--item-description">A partir du 17 DH.</p>
                                         </a>
                                     </li>
                                     <li class="slider--item slider--item-center">
@@ -86,7 +85,7 @@
                                                 <img src="assets/img/2.jpg" alt="Metiew and Smith">
                                             </div>
                                             <p class="slider--item-title">Stockage</p>
-                                            <p class="slider--item-description">Yves Rocher Maroc est une entreprise de cosmétique.</p>
+                                            <p class="slider--item-description">Gratuit pour 15 jours.</p>
                                         </a>
                                     </li>
                                     <li class="slider--item slider--item-right">
@@ -95,16 +94,16 @@
                                                 <img src="assets/img/3.jpg" alt="Alex Nowak">
                                             </div>
                                             <p class="slider--item-title">Collecte, Livraison, Emballages</p>
-                                            <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                                            <p class="slider--item-description">A partir du 22 DH.</p>
                                         </a>
                                     </li>
-                                    <li class="slider--item slider--item-right">
+                                    <li class="slider--item">
                                         <a href="#0">
                                             <div class="slider--item-image">
                                                 <img src="assets/img/4.jpg" alt="Alex Nowak">
                                             </div>
                                             <p class="slider--item-title">Collecte, Livraison, Emballage, Stockage</p>
-                                            <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                                            <p class="slider--item-description">A partir du 22 DH.</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -151,9 +150,9 @@
 
                                             </div>
                                             <div *ngIf="selectedValue!=0" class="col-4">
-                                                <h4>EMBALLAGE : {{typeEmb }}MAD</h4>
+                                                <h4>EMBALLAGE </h4>
                                                 <mat-radio-group [(ngModel)]="typeEmb">
-                                                    <mat-radio-button value="10">Personnalisé</mat-radio-button>
+                                                    <mat-radio-button value="1.5">Personnalisé</mat-radio-button>
                                                     <mat-radio-button value="0">Classique</mat-radio-button>
                                                 </mat-radio-group>
                                             </div>
@@ -169,7 +168,7 @@
 
                                             </div>
                                             <div class="price">
-                                                {{tarif(1)}}
+                                                {{tarif(0)}}
                                             </div>
                                         </div>
                                         <div class="event col-sm">
@@ -187,7 +186,7 @@
                                                 Relais J+1 <br />Express
                                             </div>
                                             <div class="price">
-                                                {{tarif(3)}}
+                                                {{tarif(8)}}
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +198,7 @@
 
 
                                             <div *ngIf="selectedRegion==0" class="col-4 colone">
-                                                <h4>Nom de Region </h4>
+                                                <h4>NOM DE REGION </h4>
                                                 <mat-form-field appearance="fill" class="mdina">
                                                     <mat-label>Choisissez la region: </mat-label>
                                                     <mat-select [(ngModel)]="selectedRegion" name="region">
@@ -215,9 +214,9 @@
 
 
                                             <div *ngIf="selectedRegion == 1" class="col-4 colone">
-                                                <h4>Villes de la
-                                                    <span (click)="this.selectedRegion = 0;" style="cursor: pointer; color: #e85f03;">
-                                                    -Region de Tanger-
+                                                <h4>TANGER-TETOUAN <br>
+                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
+                                                    -Changer la Region-
                                                 </span>
 
                                                 </h4>
@@ -232,9 +231,9 @@
                                             </div>
 
                                             <div *ngIf="selectedRegion == 2" class="col-4 colone">
-                                                <h4>Villes de la
-                                                    <span (click)="this.selectedRegion = 0;" style="cursor: pointer; color: #e85f03;">
-                                                    -Region de Kenitra-
+                                                <h4>GHARB-CHRARDA-BENI HSSEN <br>
+                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
+                                                    -Changer la Region-
                                                 </span>
 
                                                 </h4>
@@ -252,24 +251,29 @@
 
                                             <div class="col-4 colone">
                                                 <div class="testou moins">
-                                                    <h4>OBJETS PAR COMMANDE
+                                                    <h4>EXPEDITION PAR POIDS
                                                     </h4>
                                                     <mat-form-field class="example-margin colone nomarg">
-                                                        <mat-label>Value</mat-label>
+                                                        <mat-label>POIDS (Kg)</mat-label>
                                                         <input matInput type="number" [(ngModel)]="value">
                                                     </mat-form-field>
                                                 </div>
                                                 <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
                                                 </mat-slider>
                                             </div>
-                                            <div (mouseover)="changeText=true" (mouseout)="changeText=false" class="col-4 stock">
+                                            <div class="col-4 stock">
                                                 <div>
                                                     <h3>STOCKAGE</h3>
                                                 </div>
-                                                <div>
+                                                <div style="cursor: pointer;" (mouseover)="changeText=true" (mouseout)="changeText=false">
                                                     <h3><span style="color: #e85f03;">Gratuit</span> pour 15 jours</h3>
                                                 </div>
+                                                <div class="download">
+                                                    <a (click)="telecharger()">Telecharger le Devis</a>
+                                                </div>
+
                                             </div>
+
                                             <div *ngIf="changeText" class="storage-prices-box" style="display: flex;">
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">&lt; 2 sem.</span></div>
@@ -277,17 +281,18 @@
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">2s - 3m</span></div>
-                                                    <div class="storage-value"><span class="taxe">180MAD/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">180 MAD/Kg</span></div>
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">3 - 12 m</span></div>
-                                                    <div class="storage-value"><span class="taxe">500MAD/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">500 MAD/Kg</span></div>
                                                 </div>
                                                 <div class="storage-price">
                                                     <div class="storage-label"><span class="duree">12+ m</span></div>
-                                                    <div class="storage-value"><span class="taxe">1000MAD/m³/m</span></div>
+                                                    <div class="storage-value"><span class="taxe">1000 MAD/Kg</span></div>
                                                 </div>
                                             </div>
+
                                         </div>
                                         <!--  <section class="example-section">
                                             <mat-form-field class="example-margin">
@@ -310,7 +315,6 @@
  -->
 
 
-
                                     </div>
 
 
@@ -321,29 +325,75 @@
                         </div>
                     </li>
                     <li class="l-section section ">
-                        <div class="contact ">
-                            <div class="contact--lockup ">
-                                <div class="modal ">
-                                    <div class="modal--information ">
-                                        <p>Messnana , marjane park , Tanger</p>
-                                        <a href="mailto:ouremail@gmail.com ">Quickoo@gmail.com</a>
-                                        <a href="tel:+148126287560 ">+48 12 628 75 60</a>
+                        <div class="qa-contenu">
+                            <div class="qa-titre">
+                                <h1>
+                                    Vos questions fréquentes
+
+                                </h1>
+                            </div>
+                            <div class="qa-haut qa-flex">
+                                <div class="qa">
+                                    <div class="qa-logo">
                                     </div>
-                                    <ul class="modal--options ">
-                                        <li><a href="#0 ">Facebook</a></li>
-                                        <li><a href="#0 ">Instagram</a></li>
-                                        <li><a href="mailto:ouremail@gmail.com ">Contactez Nous</a></li>
-                                    </ul>
+                                    <div class="qa-text">
+                                        <h2>Y-a-t-il des frais d'inscription ?</h2>
+                                        <p>
+                                            Non, Quickoo facture uniquement les frais d'expédition de commande.
+                                        </p>
+                                    </div>
                                 </div>
+                                <div class="qa">
+                                    <div class="qa-logo">
+                                    </div>
+                                    <div class="qa-text">
+                                        <h2>Les coûts de stockage diffèrent-ils en fonction du mode d'entreposage (palettes, étagères, boîtes..) ?</h2>
+                                        <p>
+                                            Non, tous vos SKUs sont pesés et mesurés et disposent d'un coût de stockage unique, quel que soit le mode d'entreposage.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="qa-milieu qa-flex">
+                                <div class="qa">
+                                    <div class="qa-logo">
+                                    </div>
+                                    <div class="qa-text">
+                                        <h2>Quickoo facture-t-il ses cartons ?</h2>
+                                        <p>
+                                            Oui, avec Quickoo, chaque dimension de carton a un coût.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="qa">
+                                    <div class="qa-logo">
+                                    </div>
+                                    <div class="qa-text">
+                                        <h2>Dois-je payer l'intégration de ma boutique e-commerce ?</h2>
+                                        <p>
+                                            La première intégration est gratuite et assistée par nos développeur pour s'assurer que tout fonctionne correctement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" qa-flex">
+                                <div class="qa-bas">
+                                    <div class="qa-logo">
+                                    </div>
+                                    <div class="qa-text">
+                                        <h2>Quickoo facture-t-il les fournitures d'emballage et de calage des produits ?</h2>
+                                        <p>
+                                            Non ! Scotch, papier bulle... Tout est pris en charge par Quickoo !
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </li>
                     <li class="l-section section ">
-                        <div class="hire ">
-                            <h2>Contact</h2>
-                            <!-- checkout formspree.io for easy form setup -->
 
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -355,4 +405,111 @@
         <li class="is-active"><span><a style="text-decoration: none; color:#FFF" href="/Tarifs" >TARIFS</a></span></li>
         <li><span><a style="text-decoration: none; color:#FFF" href="/Service" >SERVICE</a></span></li>
     </ul>
+</div>
+
+
+<div *ngIf="devis" style="
+position: relative;
+width: 21cm;  
+height: 29.7cm; 
+margin: 0 auto; 
+color: #001028;
+background: #FFFFFF; 
+font-family: Arial, sans-serif; 
+font-size: 12px; 
+font-family: Montserrat;
+padding: 0px 20px;
+">
+    <header class="clearfix">
+        <div (click)="devis=!devis" id="logo">
+            <img src="assets/img/icon.png">
+        </div>
+        <h1 style="
+        border-top: 1px solid  #5D6975;
+        border-bottom: 1px solid  #5D6975;
+        color: #5D6975;
+        font-size: 2.4em;
+        line-height: 1.4em;
+        font-weight: normal;
+        text-align: center;
+        margin: 0 0 20px 0;
+        ">Devis</h1>
+        <div id="company" class="clearfix">
+            <div>Company Name</div>
+            <div>455 Foggy Heights,<br /> AZ 85004, US</div>
+            <div>(602) 519-0450</div>
+            <div><a class="lienPDF" href="mailto:company@example.com">company@example.com</a></div>
+        </div>
+        <div id="project">
+            <div><span>PROJECT</span> Website development</div>
+            <div><span>CLIENT</span> John Doe</div>
+            <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
+            <div><span>EMAIL</span> <a class="lienPDF" href="mailto:john@example.com">john@example.com</a></div>
+            <div><span>DATE</span>{{ ajourd | date : 'shortDate'}}</div>
+            <div><span>DUE DATE</span> September 17, 2015</div>
+        </div>
+    </header>
+    <main>
+        <table id="devis">
+            <thead>
+                <tr>
+                    <th class="service">SERVICE</th>
+                    <th class="desc">DESCRIPTION</th>
+                    <th>PRICE</th>
+                    <th>QTY</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="service">Design</td>
+                    <td class="desc">Creating a recognizable design solution based on the company's existing visual identity</td>
+                    <td class="unit">$40.00</td>
+                    <td class="qty">26</td>
+                    <td class="total">$1,040.00</td>
+                </tr>
+                <tr>
+                    <td class="service">Development</td>
+                    <td class="desc">Developing a Content Management System-based Website</td>
+                    <td class="unit">$40.00</td>
+                    <td class="qty">80</td>
+                    <td class="total">$3,200.00</td>
+                </tr>
+                <tr>
+                    <td class="service">SEO</td>
+                    <td class="desc">Optimize the site for search engines (SEO)</td>
+                    <td class="unit">$40.00</td>
+                    <td class="qty">20</td>
+                    <td class="total">$800.00</td>
+                </tr>
+                <tr>
+                    <td class="service">Training</td>
+                    <td class="desc">Initial training sessions for staff responsible for uploading web content</td>
+                    <td class="unit">$40.00</td>
+                    <td class="qty">4</td>
+                    <td class="total">$160.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4">SUBTOTAL</td>
+                    <td class="total">$5,200.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4">TAX 25%</td>
+                    <td class="total">$1,300.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="grand total">GRAND TOTAL</td>
+                    <td class="grand total">$6,500.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="notices">
+            <div>NOTICE:</div>
+
+            <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+        </div>
+    </main>
+    <footer>
+        Invoice was created on a computer and is valid without the signature and seal.
+    </footer>
 </div>

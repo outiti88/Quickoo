@@ -15,12 +15,13 @@
 }
 
 .top-line {
-    width: 82%;
+    width: 84%;
     border-top-color: #e85f03;
     border-top-style: solid;
     border-top-width: 39px;
     position: absolute;
     top: -16px;
+    border-radius: 20px;
 }
 
 @media (max-width: 800px) {

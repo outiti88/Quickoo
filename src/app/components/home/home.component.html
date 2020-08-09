@@ -43,6 +43,7 @@
                         <div style="padding-top:30px ;" class="intro">
                             <div class="intro--banner">
                                 <h1>La <span style="color: #e85f03;">logistique</span><br>au service<br>du <span style="color: #e85f03;">e</span>-commerce</h1>
+
                                 <button class="cta">Suivez La Commande
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                     <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -71,7 +72,7 @@
                           </button>
                                 </div>
                                 <img src="assets/img/about-visual.png" alt="About Us">
-                                <div *ngIf="indis" (click)="write(0)">
+                                <div *ngIf="indis" (click)="write(0)" class="service" style="cursor:pointer">
                                     <h1>
                                         {{titre}}
                                     </h1>
@@ -81,19 +82,19 @@
                                 </div>
                             </div>
                             <div class="about--options" style="max-width: 100%;">
-                                <a (click)="write(1)">
+                                <a (click)="write(1)" style="cursor:pointer">
                                     <h3 style="   text-shadow: 1px 3px rgba(29, 29, 29, 0.836);"> Gagnez du temps </h3>
                                 </a>
-                                <a (click)="write(2)">
+                                <a (click)="write(2)" style="cursor:pointer">
                                     <h3 style="   text-shadow: 1px 3px rgba(29, 29, 29, 0.836);">Livrer différemment </h3>
                                 </a>
-                                <a (click)="write(3)">
+                                <a (click)="write(3)" style="cursor:pointer">
                                     <h3 style="   text-shadow: 1px 3px rgba(29, 29, 29, 0.836);">Faites des économies</h3>
                                 </a>
-                                <a (click)="write(4)">
+                                <a (click)="write(4)" style="cursor:pointer">
                                     <h3 style="   text-shadow: 1px 3px rgba(29, 29, 29, 0.836);">Service premium</h3>
                                 </a>
-                                <a (click)="write(5)">
+                                <a (click)="write(5)" style="cursor:pointer">
                                     <h3 style="  text-shadow: 1px 3px rgba(29, 29, 29, 0.836);">Suivi & Assurance</h3>
                                 </a>
                             </div>
@@ -130,7 +131,7 @@
                                                 <img src="assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
                                             </div>
                                             <p class="slider--item-title">I design Business</p>
-                                            <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                                            <p class="slider--item-description">Une Agence de Communication specialisée dans la création des sites web,la Conception et la Publicité sur les reseaux sociaux.</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -164,9 +165,9 @@
                                         <a href="tel:+148126287560">+48 12 628 75 60</a>
                                     </div>
                                     <ul class="modal--options">
-                                        <li><a href="#0">Facebook</a></li>
-                                        <li><a href="#0">Instagram</a></li>
-                                        <li><a href="mailto:ouremail@gmail.com">Contactez Nous</a></li>
+                                        <li><a target="_blank" href="https://www.facebook.com/DeliveryQuickoo">Facebook</a></li>
+                                        <li><a target="_blank" href="https://www.instagram.com/DeliveryQuickoo">Instagram</a></li>
+                                        <li style="text-transform:none"><a target="_blank" href="https://www.linkedin.com/in/quickoo/">LinkedIn</a></li>
                                     </ul>
                                 </div>
                             </div>

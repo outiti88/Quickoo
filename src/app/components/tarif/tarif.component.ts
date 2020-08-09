@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as html2pdf from 'html2pdf.js';
+
+
 
 interface Emballage {
   value: number;
@@ -22,22 +25,27 @@ interface Region {
   styleUrls: ['./tarif.component.scss']
 })
 export class TarifComponent implements OnInit  {
+
+  devis : boolean = false;
+
   selectedVille : number =0 ;
   selectedValue: number = 0;
   selectedRegion : number = 0 ;
 
   selectedCar: string;
-  autoTicks = false;
+  autoTicks = true;
   disabled = false;
   invert = false;
-  max = 100;
-  min = 0;
+  max = 50;
+  min = 1;
   showTicks = false;
   step = 1;
   thumbLabel = true;
-  value = 0;
+  value = 1;
   tickInterval = 1;
 
+
+  ajourd : Date = new Date();
 
   valeur : number = this.selectedValue + this.value;
   typeEmb : number = 0 ;
@@ -50,7 +58,24 @@ export class TarifComponent implements OnInit  {
   ngOnInit(): void {
   }
 
-  
+  telecharger() {
+
+   /*  const options = {
+      name : 'output.pdf',
+      image : { type : 'jpeg' },
+      html2canvas : {},
+      jsPDF : {orientation : 'landscape'}
+    }
+
+    const element:Element = document.getElementById('devis');
+
+    html2pdf()
+      .from(element)
+      .set(options)
+      .save(); */
+    this.devis = true;
+    console.log("telecharger")
+  }
 
   toNumber(x : number): number {
     console.log(this.value);
@@ -58,24 +83,35 @@ export class TarifComponent implements OnInit  {
   }
 
   tarif(n : number) {
-    if(this.value < 100)
-    return (this.value + this.selectedValue + this.selectedVille + this.toNumber(this.typeEmb*this.selectedValue/this.selectedValue)) * n + " MAD"
-    else 
-    return "Contactez Nous";
+      
+    if(this.value < 26)
+    { 
+      let tmp  = this.toNumber(this.typeEmb*this.selectedValue/this.selectedValue) +this.selectedValue ; //prix de l'embalage + personalisation
+     let mad = this.value + this.selectedVille + (tmp + (tmp*0.3))  + n;
+    
+      return ((Math.round(mad * 100) / 100).toFixed(2)) + " MAD" ;
+   }
+     else 
+     return "Contactez Nous";
+ 
   }
   
   regions : Region[] = [
-    {value: 1, name : 'Region de Tanger'},
-    {value: 2, name : 'Region de Kenitra'}
+    {value: 1, name : 'Region de Tanger-Tétouan'},
+    {value: 2, name : 'Region de GHARB-CHRARDA-BENI HSSEN'}
   ];
 
 
 
   emballages: Emballage[] = [
     {value: 0, viewValue: 'Sans'},
-    {value: 5, viewValue: 'Carton'},
-    {value: 10, viewValue: 'Sachet'},
-    {value: 15, viewValue: 'Enveloppe'}
+    {value: 2.4, viewValue: 'Sachets scellables'},
+    {value: 1.9, viewValue: 'Caisse carton 18x12x10 cm'},
+    {value: 2, viewValue: 'Caisse carton 20x15x10 cm'},
+    {value: 1.8, viewValue: 'Caisse carton 21x14x13 cm'},
+    {value: 3.1, viewValue: 'Caisse carton 25x25x10 cm'},
+    {value: 2.6, viewValue: 'Caisse carton 29x19,5x10 cm'},
+    {value: 5, viewValue: 'Caisse carton 45x24x28 cm'}
   ];
 
 
@@ -107,7 +143,10 @@ export class TarifComponent implements OnInit  {
   ];
 
 
-
+regionChange(){
+  this.selectedRegion = 0;
+  this.selectedVille = 0;
+}
 
   getSliderTickInterval(): number | 'auto' {
     if (this.showTicks) {
@@ -116,6 +155,7 @@ export class TarifComponent implements OnInit  {
 
     return 0;
   }
+
  
 
 }
