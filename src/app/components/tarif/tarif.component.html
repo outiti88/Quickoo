@@ -127,7 +127,8 @@
                         </div>
                     </li>
                     <li class="l-section section">
-                        <div class="about">
+                        <div class="about" style="max-width: 78%;     width: auto;
+                        ">
                             <div class="about--banner">
                                 <div class="row block">
                                     <div class="col-sm" style="padding-bottom: 20px;">
@@ -136,26 +137,77 @@
                                         <p>Calculez vos coûts de préparation et d'expédition de commandes avec Quickoo.
 
                                         </p>
+
+
                                         <div class="row moins">
-                                            <div class="col-4">
-                                                <h4>TYPE EMBALLAGE</h4>
-                                                <mat-form-field appearance="fill" class="emballa">
-                                                    <mat-label>Choisissez votre type: </mat-label>
-                                                    <mat-select [(ngModel)]="selectedValue" name="emballage">
-                                                        <mat-option *ngFor="let emballage of emballages" [value]="emballage.value">
-                                                            {{emballage.viewValue}}
+
+                                            <div *ngIf="selectedRegion==0" class="col-4 colone">
+                                                <h4 class="tarif_title">NOM DE REGION </h4>
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label>Choisissez la region: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedRegion" name="region">
+                                                        <mat-option *ngFor="let region of regions" [value]="region.value">
+                                                            {{region.name}}
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field>
 
                                             </div>
-                                            <div *ngIf="selectedValue!=0" class="col-4">
-                                                <h4>EMBALLAGE </h4>
-                                                <mat-radio-group [(ngModel)]="typeEmb">
-                                                    <mat-radio-button value="1.5">Personnalisé</mat-radio-button>
-                                                    <mat-radio-button value="0">Classique</mat-radio-button>
-                                                </mat-radio-group>
+
+
+
+                                            <div *ngIf="selectedRegion == 1" class="col-4 colone">
+                                                <h4 class="tarif_title">TANGER-TETOUAN <br>
+                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
+                                                    -Changer la Region-
+                                                </span>
+
+                                                </h4>
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label> Choisissez la ville: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
+                                                        <mat-option *ngFor="let ville of tanger" [value]="ville.value">
+                                                            {{ville.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
                                             </div>
+
+                                            <div *ngIf="selectedRegion == 2" class="col-4 colone">
+                                                <h4 class="tarif_title">GHARB-CHRARDA-BENI HSSEN <br>
+                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
+                                                    -Changer la Region-
+                                                </span>
+
+                                                </h4>
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label>Choisissez la ville: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
+                                                        <mat-option *ngFor="let ville of kenitra" [value]="ville.value">
+                                                            {{ville.name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+
+
+
+                                            <div class="col-4 colone">
+                                                <div class="testou moins">
+                                                    <h4 class="tarif_title">EXPEDITION PAR POIDS
+                                                    </h4>
+                                                    <mat-form-field class="example-margin nomarg" style="
+                                                    width: 30%;">
+                                                        <mat-label>POIDS (Kg)</mat-label>
+                                                        <input matInput type="number" [(ngModel)]="value">
+                                                    </mat-form-field>
+                                                </div>
+                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
+                                                </mat-slider>
+                                            </div>
+
+
+
                                         </div>
 
 
@@ -196,71 +248,29 @@
 
                                         <div class="row ville">
 
-
-                                            <div *ngIf="selectedRegion==0" class="col-4 colone">
-                                                <h4>NOM DE REGION </h4>
-                                                <mat-form-field appearance="fill" class="mdina">
-                                                    <mat-label>Choisissez la region: </mat-label>
-                                                    <mat-select [(ngModel)]="selectedRegion" name="region">
-                                                        <mat-option *ngFor="let region of regions" [value]="region.value">
-                                                            {{region.name}}
+                                            <div class="col-4">
+                                                <h4 class="tarif_title">TYPE EMBALLAGE</h4>
+                                                <mat-form-field appearance="fill" class="emballa">
+                                                    <mat-label>Choisissez votre type: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedValue" name="emballage">
+                                                        <mat-option *ngFor="let emballage of emballages" [value]="emballage.value">
+                                                            {{emballage.viewValue}}
                                                         </mat-option>
                                                     </mat-select>
                                                 </mat-form-field>
 
                                             </div>
-
-
-
-
-                                            <div *ngIf="selectedRegion == 1" class="col-4 colone">
-                                                <h4>TANGER-TETOUAN <br>
-                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
-                                                    -Changer la Region-
-                                                </span>
-
-                                                </h4>
-                                                <mat-form-field appearance="fill" class="mdina">
-                                                    <mat-label>Choisissez la ville: </mat-label>
-                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
-                                                        <mat-option *ngFor="let ville of tanger" [value]="ville.value">
-                                                            {{ville.name}}
-                                                        </mat-option>
-                                                    </mat-select>
-                                                </mat-form-field>
-                                            </div>
-
-                                            <div *ngIf="selectedRegion == 2" class="col-4 colone">
-                                                <h4>GHARB-CHRARDA-BENI HSSEN <br>
-                                                    <span (click)="regionChange()" style="cursor: pointer; color: #e85f03;">
-                                                    -Changer la Region-
-                                                </span>
-
-                                                </h4>
-                                                <mat-form-field appearance="fill" class="mdina">
-                                                    <mat-label>Choisissez la ville: </mat-label>
-                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
-                                                        <mat-option *ngFor="let ville of kenitra" [value]="ville.value">
-                                                            {{ville.name}}
-                                                        </mat-option>
-                                                    </mat-select>
-                                                </mat-form-field>
+                                            <div *ngIf="selectedValue!=0" class="col-4" style="
+                                            padding-left: 30px;">
+                                                <h4 class="tarif_title">EMBALLAGE </h4>
+                                                <mat-radio-group [(ngModel)]="typeEmb">
+                                                    <mat-radio-button value="1.5">Personnalisé</mat-radio-button>
+                                                    <mat-radio-button value="0">Classique</mat-radio-button>
+                                                </mat-radio-group>
                                             </div>
 
 
 
-                                            <div class="col-4 colone">
-                                                <div class="testou moins">
-                                                    <h4>EXPEDITION PAR POIDS
-                                                    </h4>
-                                                    <mat-form-field class="example-margin colone nomarg">
-                                                        <mat-label>POIDS (Kg)</mat-label>
-                                                        <input matInput type="number" [(ngModel)]="value">
-                                                    </mat-form-field>
-                                                </div>
-                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
-                                                </mat-slider>
-                                            </div>
                                             <div class="col-4 stock">
                                                 <div>
                                                     <h3>STOCKAGE</h3>

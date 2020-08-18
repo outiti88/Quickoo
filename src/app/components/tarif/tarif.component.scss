@@ -206,12 +206,27 @@
     }
     
     .colone {
-        width: 30%;
+        width: 50%
+    }
+    
+    .tarif_title:before {
+        display: inline-block;
+        content: "";
+        background-size: 24px 24px;
+        height: 20px;
+        width: 20px;
+        margin-right: 14px;
+        background-color: #e85f03;
+        position: relative;
+        top: 5px;
+        font-size: 1.12em;
+        border-radius: 50%;
+        font-size: 1.12em;
+        text-align: center;
     }
     
     .stock {
         height: 50%;
-        margin-left: 80px;
         text-align: center;
         display: flex;
         justify-content: space-around;

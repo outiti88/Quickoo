@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="active">
+                <a href="">Retour au Site web</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <li routerLinkActive="active">
+                <a routerLink="auth/signin">Deconnexion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-xs-12">
+            <h2>Les contacts</h2>
+            <div class="list-group">
+                <button class="list-group-item" *ngFor="let contact of contacts; let i = index" (click)="onViewContact(i)">
+              <h3 class="list-group-item-heading">
+                {{ contact.name }}
+                <button class="btn btn-default pull-right" (click)="onDeleteContact(contact)">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                </h3>
+                <p class="list-group-item-text">{{ contact.email }}</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

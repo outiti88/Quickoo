@@ -1,4 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from 'src/app/services/contact.service';
+import { Router } from '@angular/router';
+import { Contact } from 'src/app/models/contact.model';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +11,53 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class HomeComponent implements OnInit , OnDestroy {
 
-
+  contactForm : FormGroup;
   
   indis = false ;
 
   paragraph = '';
   titre = '' ;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private contactsService: ContactService,
+    private router: Router) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit() {
+      this.initForm();
+    }
+    
+    initForm() {
+      this.contactForm = this.formBuilder.group({
+        name: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{4,}/)]],
+        email: ['', [Validators.required, Validators.email]],
+        emballage: '',
+        livraison: '',
+        service: '',
+        recrutement: '',
+        stockage: ''
+      });
+    }
+
+    onSaveContact() {
+      const name = this.contactForm.get('name').value;
+      const email = this.contactForm.get('email').value;
+      const emballage = this.contactForm.get('emballage').value;
+      const livraison = this.contactForm.get('livraison').value;
+      const service = this.contactForm.get('service').value;
+      const recrutement = this.contactForm.get('recrutement').value;
+      const stockage = this.contactForm.get('stockage').value;
+      const newContact = new Contact(name, email);
+      newContact.emballage = emballage;
+      newContact.livraison = livraison;
+      newContact.service = service;
+      newContact.recrutement = recrutement;
+      newContact.stockage = stockage;
+
+      this.contactsService.createNewContact(newContact);
+      console.log('bien envoyé');
+      alert('bien envoyé');
+      this.router.navigate(['/Tarifs']);
+      
+    }
 
   ngOnDestroy() : void{
 

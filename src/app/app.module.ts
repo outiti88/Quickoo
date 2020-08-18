@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { QuickooComponent } from './components/quickoo/quickoo.component';
@@ -40,6 +40,12 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SoonComponent } from './components/soon/soon.component';
 import { ServiceComponent } from './components/service/service.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactService } from './services/contact.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { SingleContactComponent } from './components/contacts/single-contact/single-contact.component';
 
 
 
@@ -47,12 +53,14 @@ import { ServiceComponent } from './components/service/service.component';
 
 const appRoutes : Routes =[
   { path: 'ComingSoon', component: SoonComponent },
- 
+  { path: 'contacts/view/:id', component: SingleContactComponent },
   { path: 'Acceuil' , component : HomeComponent  }, 
   { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: 'Service' , component : ServiceComponent  },
   { path: 'Auth' , component : AuthComponent  }, 
+  { path: 'contacts' , component : ContactsComponent  }, 
+
   { path: '' , component : HomeComponent  },
   { path: '**', redirectTo: 'ComingSoon' }
 ] ;
@@ -67,11 +75,14 @@ const appRoutes : Routes =[
     AuthComponent,
     SoonComponent,
     ServiceComponent,
+    ContactsComponent,
+    SingleContactComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
@@ -103,7 +114,7 @@ const appRoutes : Routes =[
     MatSortModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [ContactService,AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

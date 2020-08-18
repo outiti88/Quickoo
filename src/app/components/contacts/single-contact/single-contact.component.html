@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row" style="
+    margin: 30px;
+    padding: 50px;
+">
+        <div class="col-xs-12">
+            <h1>le nom complet: {{ contact.name }}</h1>
+            <h3>Adresse Email: {{ contact.email }}</h3>
+            <h3>Motif du contact: </h3>
+            <p *ngIf="contact.emballage">- Emballage</p>
+            <p *ngIf="contact.stockage">- Stockage</p>
+            <p *ngIf="contact.service">- Service Client</p>
+            <p *ngIf="contact.livraison">- Livraison</p>
+            <p *ngIf="contact.recrutement">- Recrutement</p>
+
+            <button class="btn btn-default" (click)="onBack()">Retour</button>
+        </div>
+    </div>
+</div>

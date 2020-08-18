@@ -177,10 +177,10 @@
                         <div class="hire">
                             <h2 style="padding-top: 20px;">Contact</h2>
 
-                            <form class="work-request" name="contact" action="/done/" netlify method="POST" netlify-honeypot="bot-field">
+                            <form class="work-request" [formGroup]="contactForm" (ngSubmit)="onSaveContact()">
                                 <div class="work-request--options">
                                     <span class="options-a">
-                      <input id="opt-1" type="checkbox" value="Stockage" name="Stockage">
+                      <input id="opt-1" type="checkbox" value="Stockage" formControlName="stockage">
                       <label for="opt-1">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -190,7 +190,7 @@
                         </svg>
                         Stockage
                       </label>
-                      <input id="opt-2" type="checkbox" value="Emballage" name="Emballage">
+                      <input id="opt-2" type="checkbox" value="Emballage" formControlName="emballage">
                       <label for="opt-2">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -200,7 +200,7 @@
                         </svg>
                         Emballage
                       </label>
-                      <input id="opt-3" type="checkbox" value="Livraison" name="Livraison">
+                      <input id="opt-3" type="checkbox" value="Livraison" formControlName="livraison">
                       <label for="opt-3">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -213,7 +213,7 @@
                       </label>
                     </span>
                                     <span class="options-b">
-                      <input id="opt-4" type="checkbox" value="Service Client" name="Service Client">
+                      <input id="opt-4" type="checkbox" value="Service Client" formControlName="service">
                       <label for="opt-4">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -223,7 +223,7 @@
                         </svg>
                         Service Client
                       </label>
-                      <input id="opt-5" type="checkbox" value="Recrutement" name="Recrutement">
+                      <input id="opt-5" type="checkbox" value="Recrutement" formControlName="recrutement">
                       <label for="opt-5">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -238,15 +238,15 @@
                                 </div>
                                 <div class="work-request--information">
                                     <div class="information-name">
-                                        <input name="Nom" id="name" type="text" spellcheck="false">
+                                        <input autocomplete="off" formControlName="name" id="name" type="text" spellcheck="false">
                                         <label for="name">Name</label>
                                     </div>
                                     <div class="information-email">
-                                        <input name="Email" id="email" type="email" spellcheck="false">
+                                        <input autocomplete="off" formControlName="email" id="email" type="email" spellcheck="false">
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
-                                <input type="submit" value="Envoyer">
+                                <input type="submit" value="Envoyer" [disabled]="contactForm.invalid">
                             </form>
                         </div>
                     </li>
