@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row" style="
+    margin: 30px;
+    padding: 50px;
+">
+        <div class="col-xs-12">
+
+
+
+            <div class="card text-center">
+                <div class="card-header">
+                    <h1>le nom complet: {{ devis.nom }} {{devis.prenom}}</h1>
+                    <h1>le nom de l'entreprise: {{ devis.entreprise }}</h1>
+                </div>
+                <div class="card-body">
+
+                    <h3 class="card-title">Adresse Email: {{ devis.email }}</h3>
+                    <h3 class="card-title">Téléphone: {{ devis.telephone }}</h3>
+                    <h5 class="card-title" *ngIf="devis.colis">Nombre de colis / mois: {{ devis.colis }}</h5>
+                    <h5 class="card-title" *ngIf="devis.produit">Type de produit: {{ devis.produit }}</h5>
+                    <h5 class="card-title" *ngIf="devis.service">Service choisis: {{ devis.service }}</h5>
+
+                    <p class="card-text">"{{ devis.commentaire }}"
+                    </p>
+
+                    <a style="background-color: #e85f03;" (click)="onBack()" class="btn btn-primary">
+                        <- Retour </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

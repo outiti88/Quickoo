@@ -46,6 +46,9 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { SingleContactComponent } from './components/contacts/single-contact/single-contact.component';
+import { DevisComponent } from './components/devis/devis.component';
+import { DevisService } from './services/devis.service';
+import { SingleDevisComponent } from './components/devis/single-devis/single-devis.component';
 
 
 
@@ -53,13 +56,17 @@ import { SingleContactComponent } from './components/contacts/single-contact/sin
 
 const appRoutes : Routes =[
   { path: 'ComingSoon', component: SoonComponent },
-  { path: 'contacts/view/:id', component: SingleContactComponent },
+  { path: 'devis/view/:id', canActivate: [AuthGuardService],  component: SingleDevisComponent },
+
+  { path: 'contacts/view/:id', canActivate: [AuthGuardService],  component: SingleContactComponent },
   { path: 'Acceuil' , component : HomeComponent  }, 
   { path: 'Tarifs' , component : TarifComponent  },
   { path: 'Quickoo' , component : QuickooComponent  },
   { path: 'Service' , component : ServiceComponent  },
   { path: 'Auth' , component : AuthComponent  }, 
-  { path: 'contacts' , component : ContactsComponent  }, 
+  { path: 'contacts' , canActivate: [AuthGuardService],  component : ContactsComponent  }, 
+  { path: 'devis' , canActivate: [AuthGuardService],  component : DevisComponent  }, 
+
 
   { path: '' , component : HomeComponent  },
   { path: '**', redirectTo: 'ComingSoon' }
@@ -77,6 +84,8 @@ const appRoutes : Routes =[
     ServiceComponent,
     ContactsComponent,
     SingleContactComponent,
+    DevisComponent,
+    SingleDevisComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -114,7 +123,7 @@ const appRoutes : Routes =[
     MatSortModule,
     MatPaginatorModule
   ],
-  providers: [ContactService,AuthService,AuthGuardService],
+  providers: [ContactService,AuthService,AuthGuardService,DevisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

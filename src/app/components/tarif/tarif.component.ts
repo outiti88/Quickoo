@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as html2pdf from 'html2pdf.js';
+import { DevisService } from 'src/app/services/devis.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Devis } from 'src/app/models/devis.model'
+
 
 
 
@@ -26,6 +31,12 @@ interface Region {
 })
 export class TarifComponent implements OnInit  {
 
+ 
+
+  service : string;
+  colis: string;
+  produit: string;
+
   devis : boolean = false;
 
   selectedVille : number =0 ;
@@ -51,12 +62,83 @@ export class TarifComponent implements OnInit  {
   typeEmb : number = 0 ;
   changeText : boolean = false ;
 
-  constructor() { 
+  devisForm : FormGroup;
+
+  constructor(private formBuilder: FormBuilder, private devisService: DevisService,
+    private router: Router) { 
     this.valeur = 0;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.initForm();
   }
+  
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  initForm() {
+    this.devisForm = this.formBuilder.group({
+      entreprise: ['', [Validators.required]],
+      ville: ['', [Validators.required]],
+      telephone:['', [Validators.required,Validators.pattern(/[0-9]{9}/)]],
+      nom: ['', [Validators.required]],
+      prenom: ['', [Validators.required]],
+      email:['',  [
+        Validators.required,
+        Validators.email,
+      ]],
+      colis: '',
+      service: '',
+      produit: '',
+      commentaire: ''
+    });
+  }
+
+  onSaveDevis() {
+    const entreprise = this.devisForm.get('entreprise').value;
+    const ville = this.devisForm.get('ville').value;
+    const telephone = this.devisForm.get('telephone').value;
+    const nom = this.devisForm.get('nom').value;
+    const prenom = this.devisForm.get('prenom').value;
+    const email = this.devisForm.get('email').value;
+    const colis = this.devisForm.get('colis').value;
+    const service = this.devisForm.get('service').value;
+    const produit = this.devisForm.get('produit').value;
+    const commentaire = this.devisForm.get('commentaire').value;
+
+    const newDevis = new Devis(entreprise,ville,nom,prenom, email);
+    newDevis.telephone = telephone;
+    newDevis.colis = colis;
+    newDevis.service = service;
+    newDevis.produit = produit;
+    newDevis.commentaire = commentaire;
+
+    this.devisService.createNewDevis(newDevis);
+    console.log('bien envoyé');
+    alert('bien envoyé');
+    this.router.navigate(['/Service']);
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   telecharger() {
 

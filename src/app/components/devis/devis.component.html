@@ -3,8 +3,8 @@ padding-top: 20px;
 ">
     <div class="container-fluid">
         <div class="test green borderXwidth">
-            <a routerLink="/devis">
-                Voir les demandes de devis</a>
+            <a routerLink="/contacts">
+                Voir les contacts</a>
             <a href="">
                 <- Retour au Site web</a>
                     <a (click)="onSignOut()">Deconnexion</a>
@@ -23,20 +23,20 @@ padding-top: 20px;
             text-align: center;
             font-size: 4em;
             color: #e85f03;
-        ">Les contacts</h2>
+        ">Les Demandes de devis</h2>
             <div class="list-group btnlist">
                 <button style="
                 background: #e85f0300;
                 color: white;
                 margin-bottom: 10px;
-            " class="list-group-item " *ngFor="let contact of contacts; let i = index" (click)="onViewContact(i)">
+            " class="list-group-item " *ngFor="let devi of devis; let i = index" (click)="onViewDevis(i)">
               <h3 style="color:#e85f03" class="list-group-item-heading">
-                {{ contact.name }}
-                <button class="btn btn-default pull-right" (click)="onDeleteContact(contact)">
+                {{ devi.nom }} {{devi.prenom}}
+                <button class="btn btn-default pull-right" (click)="onDeleteDevis(devi)">
                   <span class="glyphicon glyphicon-minus"></span>
                 </button>
                 </h3>
-                <p class="list-group-item-text">email: {{ contact.email }}</p>
+                <p class="list-group-item-text">Entreprise: {{ devi.entreprise }}</p>
                 </button>
             </div>
         </div>

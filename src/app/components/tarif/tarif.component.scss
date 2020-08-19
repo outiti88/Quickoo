@@ -1,3 +1,13 @@
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    .example-full-width {
+        width: 100%;
+    }
+    
     .example-h2 {
         margin: 0 8px 16px;
     }
@@ -510,4 +520,36 @@
         border-top: 1px solid #C1CED9;
         padding: 8px 0;
         text-align: center;
+    }
+    
+    .reset {
+        width: 400px;
+        max-width: 100%;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: #e85f03;
+        border: none;
+        border-radius: 0;
+    }
+    
+    .btnForm {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .btn-invalidFrom {
+        background-color: #e85f0330;
+        width: 400px;
+        max-width: 100%;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 0;
+        color: #ffffff38;
+        cursor: no-drop;
     }

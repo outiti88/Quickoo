@@ -4,16 +4,27 @@
     padding: 50px;
 ">
         <div class="col-xs-12">
-            <h1>le nom complet: {{ contact.name }}</h1>
-            <h3>Adresse Email: {{ contact.email }}</h3>
-            <h3>Motif du contact: </h3>
-            <p *ngIf="contact.emballage">- Emballage</p>
-            <p *ngIf="contact.stockage">- Stockage</p>
-            <p *ngIf="contact.service">- Service Client</p>
-            <p *ngIf="contact.livraison">- Livraison</p>
-            <p *ngIf="contact.recrutement">- Recrutement</p>
 
-            <button class="btn btn-default" (click)="onBack()">Retour</button>
+
+
+            <div class="card text-center">
+                <div class="card-header">
+                    <h1>le nom complet: {{ contact.name }}</h1>
+                </div>
+                <div class="card-body">
+
+                    <h3 class="card-title">Adresse Email: {{ contact.email }}</h3>
+                    <h3 class="card-title">Motif du contact: </h3>
+                    <p class="card-text" *ngIf="contact.emballage">- Emballage</p>
+                    <p class="card-text" *ngIf="contact.stockage">- Stockage</p>
+                    <p class="card-text" *ngIf="contact.service">- Service Client</p>
+                    <p class="card-text" *ngIf="contact.livraison">- Livraison</p>
+                    <p class="card-text" *ngIf="contact.recrutement">- Recrutement</p>
+                    <a style="background-color: #e85f03;" (click)="onBack()" class="btn btn-primary">
+                        <- Retour </a>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>

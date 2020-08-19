@@ -36,6 +36,7 @@
                         <li><span>Nos offres</span></li>
                         <li><span>Simulateur</span></li>
                         <li><span>Vos questions</span></li>
+                        <li><span>Mon Devis</span></li>
                     </ul>
                 </nav>
                 <ul class="l-main-content main-content">
@@ -403,7 +404,140 @@
                         </div>
                     </li>
                     <li class="l-section section ">
+                        <div class="hire" style="
+                        width: 900px;
+                    ">
+                            <h2 style="padding-top: 50px;">Demande de Devis</h2>
 
+                            <form class="work-request" [formGroup]="devisForm" (ngSubmit)="onSaveDevis()">
+
+                                <div class="work-request--information" style="
+                                margin-bottom: 30px;
+                            ">
+                                    <div class="information-name" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Entreprise</mat-label>
+                                            <input matInput placeholder="Ex. Decathlon" formControlName="entreprise">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Ville</mat-label>
+                                            <input matInput placeholder="Ex. Tanger" formControlName="ville">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Telephone</mat-label>
+                                            <span matPrefix>+212 &nbsp;</span>
+                                            <input type="tel" matInput placeholder="666-555-123" formControlName="telephone">
+                                            <mat-icon matSuffix>mode_edit</mat-icon>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="work-request--information" style="
+                                margin-bottom: 30px;
+                            ">
+                                    <div class="information-name" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Nom</mat-label>
+                                            <input matInput placeholder="Votre nom" formControlName="nom">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Prenom</mat-label>
+                                            <input matInput placeholder="Votre Prenom" formControlName="prenom">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Adresse Email</mat-label>
+                                            <input matInput formControlName="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                                Veuillez entrer une adresse Email validé
+                                            </mat-error>
+                                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                                Email is <strong>Obligatoire</strong>
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="work-request--information" style="
+                                margin-bottom: 30px;
+                            ">
+                                    <div class="information-name" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field appearance="fill" style="
+                                        width: 100%;
+                                    ">
+                                            <mat-label>Nombre de colis / mois</mat-label>
+                                            <mat-select [(value)]="colis" formControlName="colis">
+                                                <mat-option>None</mat-option>
+                                                <mat-option value="not_started">Je vais lancer mon activité très prochainement</mat-option>
+                                                <mat-option value="0 - 200">0 - 200</mat-option>
+                                                <mat-option value="200-500">200 - 500</mat-option>
+                                                <mat-option value="500-1000">500 - 1000</mat-option>
+                                                <mat-option value="1000-2500">1000 - 2500</mat-option>
+                                                <mat-option value="2500-5000">2500 - 5000</mat-option>
+                                                <mat-option value="5000+">Plus de 5000
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field appearance="fill" style="
+                                        width: 100%;
+                                    ">
+                                            <mat-label>Type de produits</mat-label>
+                                            <mat-select [(value)]="produit" formControlName="produit">
+                                                <mat-option>None</mat-option>
+                                                <mat-option value="Vêtements">Vêtements</mat-option>
+                                                <mat-option value="shoes">Chaussures</mat-option>
+                                                <mat-option value="Bijoux">Bijoux et accessoires</mat-option>
+                                                <mat-option value="cosmétiques">Produit cosmétiques</mat-option>
+                                                <mat-option value="high-tech">Produits High Tech</mat-option>
+                                                <mat-option value="Décoration">Décoration</mat-option>
+                                                <mat-option value="Librairie">Librairie</mat-option>
+                                                <mat-option value="Maroquinerie">Maroquinerie</mat-option>
+                                                <mat-option value="Végétaux">Végétaux</mat-option>
+                                                <mat-option value="Autres">Autres</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="information-email" style="width: 30%; font-size: 1em;">
+                                        <mat-form-field appearance="fill" style="
+                                        width: 100%;
+                                    ">
+                                            <mat-label>Choisissez le service</mat-label>
+                                            <mat-select [(value)]="service" formControlName="service">
+                                                <mat-option>None</mat-option>
+                                                <mat-option value="option1">Stockage, préparation, expédition</mat-option>
+                                                <mat-option value="option2">Collecte, emballage, expédition</mat-option>
+                                                <mat-option value="option3">Opération ponctuelle</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="work-request--information" style="
+                                margin-bottom: 30px;
+                            ">
+                                    <div class="information-name" style="width: 100%; font-size: 1em;">
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Decrivez nous votre besoin</mat-label>
+                                            <textarea formControlName="commentaire" matInput placeholder="Ex. Lorem ipsum dolor sit amet consectetur adipisicing elit."></textarea>
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+                                <div class="btnForm">
+
+                                    <input type="reset" value="Suprimer" class="reset">
+                                    <button type="submit" [disabled]="devisForm.invalid" [ngClass]="!devisForm.invalid ? 'reset' : 'btn-invalidFrom '">
+                                        Envoyer
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>

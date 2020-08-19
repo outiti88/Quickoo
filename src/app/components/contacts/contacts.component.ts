@@ -3,6 +3,9 @@ import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
+import { AuthService } from 'src/app/services/auth.service';
+import * as firebase from 'firebase';
+
 
 @Component({
   selector: 'app-contacts',
@@ -15,7 +18,8 @@ export class ContactsComponent implements OnInit, OnDestroy {
   contacts: Contact[];
   contactsSubscription : Subscription;
 
-  constructor(private contactsService : ContactService, private router : Router) { }
+  constructor(private contactsService : ContactService, private router : Router, private authService: AuthService) { }
+  isAuth: boolean;
 
   ngOnInit(): void {
     this.contactsSubscription = this.contactsService.contactsSubject.subscribe(
@@ -24,6 +28,17 @@ export class ContactsComponent implements OnInit, OnDestroy {
       }
     );
     this.contactsService.emitContacts();
+
+    firebase.auth().onAuthStateChanged(
+      (user) => {
+        if(user) {
+          this.isAuth = true;
+        } else {
+          this.isAuth = false;
+        }
+      }
+    );
+
   }
 
   onDeleteContact(contact: Contact) {
@@ -36,6 +51,10 @@ export class ContactsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.contactsSubscription.unsubscribe();
+  }
+
+  onSignOut() {
+    this.authService.signOutUser();
   }
 
 }
