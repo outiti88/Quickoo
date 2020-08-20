@@ -39,7 +39,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SoonComponent } from './components/soon/soon.component';
-import { ServiceComponent } from './components/service/service.component';
+import { ServiceComponent } from 'src/app/components/service/service.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact.service';
 import { AuthService } from './services/auth.service';
