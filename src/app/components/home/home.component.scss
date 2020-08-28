@@ -5,19 +5,49 @@
     left: -15px;
     right: 0;
     height: 2px;
-    background-color: #282828
-}
-
-.intro--banner::after {
-    content: "";
-    position: absolute;
-    bottom: 18px;
-    left: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #e85f03
+    background-color: #e85f03;
 }
 
 .service :hover {
     color: #e85f03;
+}
+
+.service-title {
+    position: relative;
+    top: 35px;
+    font-size: 4em;
+}
+
+.services-icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 1100px;
+    position: relative;
+    left: -80px;
+}
+
+.service-icon {
+    width: 33%;
+}
+
+.service-icon h3 {
+    text-align: center;
+    color: #e85f03;
+}
+
+.service-icon p {
+    text-align: center;
+    font-size: 0.75em;
+}
+
+.service-icon img {
+    width: 25%;
+}
+
+.btn-invalidFrom {
+    background-color: #e85f0330;
+    color: #ffffff38;
+    cursor: no-drop;
 }

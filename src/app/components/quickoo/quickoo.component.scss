@@ -1,29 +1,40 @@
 .intro--banner::before {
     content: "";
     position: absolute;
-    bottom: 3px;
+    bottom: 20px;
     left: -15px;
     right: 0;
     height: 2px;
-    background-color: #282828
-}
-
-.intro--banner::after {
-    content: "";
-    position: absolute;
-    bottom: 1px;
-    left: 0;
-    width: 30px;
-    height: 4px;
-    background-color: #e85f03
+    background-color: #e85f03;
 }
 
 .text {
     width: 55%;
 }
 
+.text2 {
+    width: 65%;
+}
+
+.parag::before {
+    display: inline-block;
+    content: "";
+    /* background-size: 24px 24px; */
+    height: 12px;
+    width: 12px;
+    /* margin-right: 14px; */
+    background-color: #e85f03;
+    position: relative;
+    top: 2px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
 @media (max-width: 600px) {
     .text {
+        width: 100%;
+    }
+    .text2 {
         width: 100%;
     }
     .client {
@@ -40,8 +51,5 @@
     .pc {
         bottom: 0;
         right: 0;
-    }
-    h1 {
-        font-size: 3em;
     }
 }

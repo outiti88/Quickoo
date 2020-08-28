@@ -24,7 +24,7 @@
     }
     
     .mat-slider-horizontal {
-        width: 100%;
+        width: 70%;
     }
     
     .mat-slider-vertical {
@@ -242,6 +242,8 @@
         justify-content: space-around;
         width: 40%;
         flex-wrap: wrap;
+        position: relative;
+        left: 50px;
     }
     
     .download a {
@@ -272,6 +274,7 @@
             position: relative;
             display: flex;
             justify-content: space-between;
+            top: 40px;
         }
         .event {
             width: 30%;
@@ -552,4 +555,8 @@
         border-radius: 0;
         color: #ffffff38;
         cursor: no-drop;
+    }
+    
+    .col-4 h4 {
+        color: #e85f03;
     }

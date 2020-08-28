@@ -35,7 +35,7 @@
                         <li class="is-active"><span>Tarif</span></li>
                         <li><span>Nos offres</span></li>
                         <li><span>Simulateur</span></li>
-                        <li><span>Mon Devis</span></li>
+                        <li><span>Devis</span></li>
                         <li><span>Vos questions</span></li>
                     </ul>
                 </nav>
@@ -133,9 +133,11 @@
                             <div class="about--banner">
                                 <div class="row block">
                                     <div class="col-sm" style="padding-bottom: 20px;">
-                                        <h2 id="pricing" class="payez">Payez Moins
+                                        <h2 id="pricing" class="payez" style="font-size:6em; margin-bottom: 0;">Payez <span style="color: #e85f03;">Moins</span>
                                         </h2>
-                                        <p>Calculez vos coûts de préparation et d'expédition de commandes avec Quickoo.
+                                        <p style="
+                                        margin-bottom: 50px;
+                                    ">Calculez vos coûts de préparation et d'expédition de commandes avec Quickoo.
 
                                         </p>
 
@@ -197,14 +199,19 @@
                                                 <div class="testou moins">
                                                     <h4 class="tarif_title">EXPEDITION PAR POIDS
                                                     </h4>
+
+                                                </div>
+                                                <div class="moins">
+                                                    <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
+                                                    </mat-slider>
                                                     <mat-form-field class="example-margin nomarg" style="
-                                                    width: 30%;">
+                                                    width: 20%;
+                                                    position: relative;
+                                                    top: -15px;">
                                                         <mat-label>POIDS (Kg)</mat-label>
                                                         <input matInput type="number" [(ngModel)]="value">
                                                     </mat-form-field>
                                                 </div>
-                                                <mat-slider ng-model="color.red" color="primary" class="example-margin " [max]="max " [min]="min " [step]="step " [thumbLabel]="thumbLabel " [tickInterval]="getSliderTickInterval() " [(ngModel)]="value ">
-                                                </mat-slider>
                                             </div>
 
 
@@ -213,11 +220,15 @@
 
 
                                     </div>
-                                    <div class="pack">
+                                    <div class="pack" style="
+                                    top: 30px;
+                                    position: relative;
+                                ">
                                         <div class="event col-sm">
                                             <span>#001</span>
                                             <div class="info">
-                                                Relais J+3 <br />Relais
+
+                                                < 72 Heures <br/>Relais
 
                                             </div>
                                             <div class="price">
@@ -227,7 +238,8 @@
                                         <div class="event col-sm">
                                             <span>#002</span>
                                             <div class="info">
-                                                Relais J+2 <br />Standard
+
+                                                < 48 Heures <br/>Standard
                                             </div>
                                             <div class="price">
                                                 {{tarif(2)}}
@@ -236,7 +248,8 @@
                                         <div class="event col-sm">
                                             <span>#003</span>
                                             <div class="info">
-                                                Relais J+1 <br />Express
+
+                                                < 04 Heures <br />Express
                                             </div>
                                             <div class="price">
                                                 {{tarif(8)}}
@@ -261,12 +274,12 @@
                                                 </mat-form-field>
 
                                             </div>
-                                            <div *ngIf="selectedValue!=0" class="col-4" style="
+                                            <div class="col-4" style="
                                             padding-left: 30px;">
                                                 <h4 class="tarif_title">EMBALLAGE </h4>
-                                                <mat-radio-group [(ngModel)]="typeEmb">
+                                                <mat-radio-group [(ngModel)]="typeEmb" [disabled]="selectedValue==0">
                                                     <mat-radio-button value="1.5">Personnalisé</mat-radio-button>
-                                                    <mat-radio-button value="0">Classique</mat-radio-button>
+                                                    <mat-radio-button value="0" checked="true">Classique</mat-radio-button>
                                                 </mat-radio-group>
                                             </div>
 
@@ -279,9 +292,9 @@
                                                 <div style="cursor: pointer;" (mouseover)="changeText=true" (mouseout)="changeText=false">
                                                     <h3><span style="color: #e85f03;">Gratuit</span> pour 15 jours</h3>
                                                 </div>
-                                                <div class="download">
+                                                <!--     <div class="download">
                                                     <a (click)="telecharger()">Telecharger le Devis</a>
-                                                </div>
+                                                </div> -->
 
                                             </div>
 
@@ -348,19 +361,19 @@
                             ">
                                     <div class="information-name" style="width: 30%; font-size: 1em;">
                                         <mat-form-field class="example-full-width">
-                                            <mat-label>Entreprise</mat-label>
+                                            <mat-label>Entreprise*</mat-label>
                                             <input matInput placeholder="Ex. Decathlon" formControlName="entreprise">
                                         </mat-form-field>
                                     </div>
                                     <div class="information-email" style="width: 30%; font-size: 1em;">
                                         <mat-form-field class="example-full-width">
-                                            <mat-label>Ville</mat-label>
+                                            <mat-label>Ville*</mat-label>
                                             <input matInput placeholder="Ex. Tanger" formControlName="ville">
                                         </mat-form-field>
                                     </div>
                                     <div class="information-email" style="width: 30%; font-size: 1em;">
                                         <mat-form-field class="example-full-width">
-                                            <mat-label>Telephone</mat-label>
+                                            <mat-label>Telephone*</mat-label>
                                             <span matPrefix>+212 &nbsp;</span>
                                             <input type="tel" matInput placeholder="666-555-123" formControlName="telephone">
                                             <mat-icon matSuffix>mode_edit</mat-icon>
@@ -372,13 +385,13 @@
                             ">
                                     <div class="information-name" style="width: 30%; font-size: 1em;">
                                         <mat-form-field class="example-full-width">
-                                            <mat-label>Nom</mat-label>
+                                            <mat-label>Nom*</mat-label>
                                             <input matInput placeholder="Votre nom" formControlName="nom">
                                         </mat-form-field>
                                     </div>
                                     <div class="information-email" style="width: 30%; font-size: 1em;">
                                         <mat-form-field class="example-full-width">
-                                            <mat-label>Prenom</mat-label>
+                                            <mat-label>Prenom*</mat-label>
                                             <input matInput placeholder="Votre Prenom" formControlName="prenom">
                                         </mat-form-field>
                                     </div>
@@ -389,9 +402,7 @@
                                             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                                                 Veuillez entrer une adresse Email validé
                                             </mat-error>
-                                            <mat-error *ngIf="emailFormControl.hasError('required')">
-                                                Email is <strong>Obligatoire</strong>
-                                            </mat-error>
+
                                         </mat-form-field>
                                     </div>
                                 </div>
@@ -404,7 +415,7 @@
                                     ">
                                             <mat-label>Nombre de colis / mois</mat-label>
                                             <mat-select [(value)]="colis" formControlName="colis">
-                                                <mat-option>None</mat-option>
+                                                <mat-option>Aucun</mat-option>
                                                 <mat-option value="not_started">Je vais lancer mon activité très prochainement</mat-option>
                                                 <mat-option value="0 - 200">0 - 200</mat-option>
                                                 <mat-option value="200-500">200 - 500</mat-option>
@@ -422,7 +433,7 @@
                                     ">
                                             <mat-label>Type de produits</mat-label>
                                             <mat-select [(value)]="produit" formControlName="produit">
-                                                <mat-option>None</mat-option>
+                                                <mat-option>Aucun</mat-option>
                                                 <mat-option value="Vêtements">Vêtements</mat-option>
                                                 <mat-option value="shoes">Chaussures</mat-option>
                                                 <mat-option value="Bijoux">Bijoux et accessoires</mat-option>
@@ -442,10 +453,13 @@
                                     ">
                                             <mat-label>Choisissez le service</mat-label>
                                             <mat-select [(value)]="service" formControlName="service">
-                                                <mat-option>None</mat-option>
-                                                <mat-option value="option1">Stockage, préparation, expédition</mat-option>
+                                                <mat-option>Aucun</mat-option>
+                                                <mat-option value="option1">Stockage</mat-option>
+                                                <mat-option value="option1">Collecte, expédition</mat-option>
                                                 <mat-option value="option2">Collecte, emballage, expédition</mat-option>
-                                                <mat-option value="option3">Opération ponctuelle</mat-option>
+                                                <mat-option value="option2">Collecte, stockage, expédition</mat-option>
+                                                <mat-option value="option2">Collecte, stockage, emballage, expédition</mat-option>
+
                                             </mat-select>
                                         </mat-form-field>
                                     </div>

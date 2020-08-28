@@ -87,8 +87,7 @@ export class TarifComponent implements OnInit  {
       nom: ['', [Validators.required]],
       prenom: ['', [Validators.required]],
       email:['',  [
-        Validators.required,
-        Validators.email,
+        Validators.email
       ]],
       colis: '',
       service: '',

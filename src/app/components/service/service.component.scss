@@ -14,6 +14,12 @@
     padding-top: 35px;
 }
 
+.titre2 {
+    font-size: 8.5em;
+    text-align: center;
+    padding-top: 35px;
+}
+
 .top-line {
     width: 84%;
     border-top-color: #e85f03;
@@ -25,6 +31,9 @@
 }
 
 @media (max-width: 800px) {
+    .titre2 {
+        font-size: 7em;
+    }
     .top-line {
         display: none;
     }

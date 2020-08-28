@@ -622,7 +622,8 @@ body {
     margin: 0;
     padding: 0;
     list-style-position: inside;
-    z-index: 10
+    z-index: 10;
+    font-family: "Montserrat", sans-serif !important;
 }
 
 .side-nav>li {
@@ -784,7 +785,9 @@ body {
     justify-content: space-between;
     margin: 0;
     padding: 0;
-    list-style: none
+    list-style: none;
+    position: relative;
+    top: -25px;
 }
 
 .intro--options>a {
@@ -1117,6 +1120,8 @@ body {
     height: 475px
 }
 
+
+/*
 .about--banner::before {
     content: "";
     position: absolute;
@@ -1139,7 +1144,7 @@ body {
     width: 10px;
     height: 10px;
     background-color: #e85f03
-}
+}*/
 
 .about--banner h2 {
     position: relative;
@@ -1150,6 +1155,8 @@ body {
     z-index: 1
 }
 
+
+/*
 .about--banner h2::before {
     content: "";
     position: absolute;
@@ -1169,7 +1176,7 @@ body {
     width: 10px;
     height: 10px;
     background-color: #e85f03
-}
+}*/
 
 .about--banner a {
     padding: 5px 17px 5px 0;
