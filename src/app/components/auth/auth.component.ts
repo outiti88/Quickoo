@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss' , 
-              './style1.css']
+              './style1.css',
+              './style2.css',
+              './fa.css']
 })
 export class AuthComponent implements OnInit {
   signinForm: FormGroup;
