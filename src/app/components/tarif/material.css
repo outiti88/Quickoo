@@ -33,3 +33,16 @@
     background-color: #e85f03 !important;
     ;
 }
+
+::ng-deep.mat-select-value {
+    color: white !important;
+}
+
+
+/*::ng-deep.mat-option {
+    color: #e85f03 !important;
+}*/
+
+::ng-deep.mat-label {
+    color: white !important;
+}

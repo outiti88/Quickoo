@@ -166,22 +166,10 @@
                                                 </span>
 
                                                 </h4>
-                                                <mat-form-field appearance="fill" class="mdina" style="
-                                                color: rgb(255 0 0);
-                                                ;
-                                            ">
-                                                    <mat-label style="
-                                                    color: rgb(255 0 0);
-                                                    ;
-                                                "> Choisissez la ville: </mat-label>
-                                                    <mat-select [(ngModel)]="selectedVille" name="ville" style="
-                                                    color: rgb(2255 0 0);
-                                                    ;
-                                                ">
-                                                        <mat-option *ngFor="let ville of tanger" [value]="ville.value" style="
-                                                        color: rgb(255 0 0);
-                                                        ;
-                                                    ">
+                                                <mat-form-field appearance="fill" class="mdina">
+                                                    <mat-label> Choisissez la ville: </mat-label>
+                                                    <mat-select [(ngModel)]="selectedVille" name="ville">
+                                                        <mat-option *ngFor="let ville of tanger" [value]="ville.value">
                                                             {{ville.name}}
                                                         </mat-option>
                                                     </mat-select>
