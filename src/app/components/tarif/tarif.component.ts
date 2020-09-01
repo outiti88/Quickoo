@@ -27,7 +27,8 @@ interface Region {
 @Component({
   selector: 'app-tarif',
   templateUrl: './tarif.component.html',
-  styleUrls: ['./tarif.component.scss']
+  styleUrls: ['./tarif.component.scss',
+                './material.css']
 })
 export class TarifComponent implements OnInit  {
 

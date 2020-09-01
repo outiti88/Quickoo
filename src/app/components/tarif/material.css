@@ -1,0 +1,35 @@
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: green !important;
+    ;
+}
+
+.mat-form-field-infix {
+    border-top: .84375em solid transparent !important;
+}
+
+.mat-select-value {
+    color: green !important;
+}
+
+.mat-form-field-hide-placeholder .mat-select-placeholder {
+    color: green !important;
+    -webkit-text-fill-color: transparent !important;
+    transition: none;
+    display: block;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #e85f03 !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #e85f03 !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #e85f03 !important;
+    ;
+}
