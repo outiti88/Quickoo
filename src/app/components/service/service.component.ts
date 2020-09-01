@@ -1,22 +1,22 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
   styleUrls: ['./service.component.scss']
 })
-export class ServiceComponent implements OnInit , OnDestroy {
+export class ServiceComponent implements OnInit {
 
-  constructor() { 
-  
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
+  slide : number = 0;
 
-  ngOnDestroy(){
-    location.reload();
-
+  slider(n : number){
+    this.slide = n;
   }
+
+  toggle : boolean = false;
 
 }

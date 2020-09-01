@@ -24,22 +24,22 @@
                     border-radius: 10px;
                   
                 ">MON ESPACE</a>
-                    <div class="header--nav-toggle">
+                    <div class="header--nav-toggle" (click)="toggle=!toggle">
                         <span></span>
                     </div>
 
                 </header>
                 <nav class="l-side-nav">
                     <ul class="side-nav">
-                        <li class="is-active"><span>Nos Services</span></li>
-                        <li><span>Collecte</span></li>
-                        <li><span>Stockage</span></li>
-                        <li><span>Emballage</span></li>
-                        <li><span>Expédition</span></li>
+                        <li [ngClass]="{'is-active': slide === 0}" (click)="slider(0)"><span>Nos Services</span></li>
+                        <li [ngClass]="{'is-active': slide === 1}" (click)="slider(1)"><span>Collecte</span></li>
+                        <li [ngClass]="{'is-active': slide === 2}" (click)="slider(2)"><span>Stockage</span></li>
+                        <li [ngClass]="{'is-active': slide === 3}" (click)="slider(3)"><span>Emballage</span></li>
+                        <li [ngClass]="{'is-active': slide === 4}" (click)="slider(4)"><span>Expédition</span></li>
                     </ul>
                 </nav>
-                <ul class="l-main-content main-content">
-                    <li class="l-section section section--is-active">
+                <ul class="l-main-content main-content" (click)="toggle = false">
+                    <li [class]="slide === 0 ? 'section--is-active l-section section': 'l-section section'">
                         <div style="padding-top:30px ; " class="intro">
                             <div class="intro--banner" style="display:flex ; height:auto">
                                 <div>
@@ -58,7 +58,7 @@
 
                         </div>
                     </li>
-                    <li class="l-section section">
+                    <li [class]="slide === 1 ? 'section--is-active l-section section': 'l-section section'">
                         <div style="padding-top:30px ; " class="intro">
                             <div class="intro--banner" style="display:flex ; height:auto">
                                 <div>
@@ -78,7 +78,7 @@
                         </div>
 
                     </li>
-                    <li class="l-section section">
+                    <li [class]="slide === 2 ? 'section--is-active l-section section': 'l-section section'">
                         <div style="padding-top:30px ; " class="intro">
                             <div class="intro--banner" style="display:flex ; height:auto">
                                 <div>
@@ -96,7 +96,7 @@
                         </div>
 
                     </li>
-                    <li class="l-section section">
+                    <li [class]="slide === 3 ? 'section--is-active l-section section': 'l-section section'">
                         <div style="padding-top:30px ; " class="intro">
                             <div class="intro--banner" style="display:flex ; height:auto">
                                 <div>
@@ -113,7 +113,7 @@
 
                         </div>
                     </li>
-                    <li class="l-section section">
+                    <li [class]="slide === 4 ? 'section--is-active l-section section': 'l-section section'">
                         <div style="padding-top:30px ; " class="intro">
                             <div class="intro--banner" style="display:flex ; height:auto">
                                 <div>
@@ -135,10 +135,10 @@
             </div>
         </div>
     </div>
-    <ul class="outer-nav ">
-        <li class="is-active"><span><a style="text-decoration: none; color:#FFF" href="/" >ACCEUIL</a></span></li>
-        <li><span><a style="text-decoration: none; color:#FFF" href="/Quickoo" >QUICKOO</a></span></li>
-        <li><span><a style="text-decoration: none; color:#FFF" href="/Tarifs" >TARIFS</a></span></li>
-        <li><span><a style="text-decoration: none; color:#FFF" href="/Service" >SERVICE</a></span></li>
+    <ul class="outer-nav" [ngClass]="{'is-vis' : toggle}">
+        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/" >ACCEUIL</a></span></li>
+        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/Quickoo" >QUICKOO</a></span></li>
+        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/Tarifs" >TARIFS</a></span></li>
+        <li [ngClass]="{'is-vis' : toggle}" class="is-active"><span><a style="text-decoration: none; color:#FFF" routerLink="/Service" >SERVICE</a></span></li>
     </ul>
 </div>

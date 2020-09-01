@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as html2pdf from 'html2pdf.js';
 import { DevisService } from 'src/app/services/devis.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
@@ -30,9 +30,15 @@ interface Region {
   styleUrls: ['./tarif.component.scss',
                 './material.css',  './material2.css']
 })
-export class TarifComponent implements OnInit , OnDestroy {
+export class TarifComponent implements OnInit  {
 
- 
+  slide : number = 0;
+
+  slider(n : number){
+    this.slide = n;
+  }
+
+  toggle : boolean = false;
 
   service : string;
   colis: string;
@@ -72,11 +78,6 @@ export class TarifComponent implements OnInit , OnDestroy {
 
   ngOnInit() {
     this.initForm();
-  }
-
-  ngOnDestroy(){
-    location.reload();
-
   }
   
 

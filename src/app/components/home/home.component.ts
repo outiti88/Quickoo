@@ -24,6 +24,14 @@ export class HomeComponent implements OnInit , OnDestroy {
     ngOnInit() {
       this.initForm();
     }
+
+    slide : number = 0;
+    toggle : boolean = false;
+
+
+    slider(n : number){
+      this.slide = n;
+    }
     
     initForm() {
       this.contactForm = this.formBuilder.group({
@@ -59,10 +67,9 @@ export class HomeComponent implements OnInit , OnDestroy {
       
     }
 
-    ngOnDestroy(){
-      location.reload();
-  
-    }
+  ngOnDestroy() : void{
+
+  }
 
   
 

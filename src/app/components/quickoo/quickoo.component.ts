@@ -1,21 +1,26 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-quickoo',
   templateUrl: './quickoo.component.html',
   styleUrls: ['./quickoo.component.scss']
 })
-export class QuickooComponent implements OnInit, OnDestroy {
+export class QuickooComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngOnDestroy(){
-    location.reload();
+  toggle : boolean = false;
 
+
+  slide : number = 0;
+
+  slider(n : number){
+    this.slide = n;
   }
+  
 
 
 }

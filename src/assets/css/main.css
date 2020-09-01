@@ -1730,7 +1730,7 @@ body {
 
 .outer-nav {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 55%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -1746,7 +1746,11 @@ body {
 }
 
 .outer-nav.is-vis {
-    visibility: visible
+    visibility: visible;
+    background-color: black;
+    height: 100%;
+    width: 40%;
+    margin-top: 50px;
 }
 
 .outer-nav--return {
@@ -1786,7 +1790,8 @@ body {
     -webkit-transition: opacity .4s, -webkit-transform .4s;
     transition: opacity .4s, -webkit-transform .4s;
     transition: transform .4s, opacity .4s;
-    transition: transform .4s, opacity .4s, -webkit-transform .4s
+    transition: transform .4s, opacity .4s, -webkit-transform .4s;
+    margin-top: 40px;
 }
 
 .outer-nav>li::before {
@@ -1808,7 +1813,7 @@ body {
 
 @media (max-width: 767px) {
     .outer-nav>li {
-        font-size: 44px
+        font-size: 2em;
     }
     .header--logo {
         width: 20%;
@@ -1817,7 +1822,7 @@ body {
 
 @media (max-width: 600px) {
     .outer-nav>li {
-        font-size: 34px
+        font-size: 2em;
     }
 }
 
