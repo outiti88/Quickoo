@@ -17,8 +17,4 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  actualiser(){
-   location.reload();
-  }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as html2pdf from 'html2pdf.js';
 import { DevisService } from 'src/app/services/devis.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
@@ -30,7 +30,7 @@ interface Region {
   styleUrls: ['./tarif.component.scss',
                 './material.css',  './material2.css']
 })
-export class TarifComponent implements OnInit  {
+export class TarifComponent implements OnInit , OnDestroy {
 
  
 
@@ -72,6 +72,11 @@ export class TarifComponent implements OnInit  {
 
   ngOnInit() {
     this.initForm();
+  }
+
+  ngOnDestroy(){
+    location.reload();
+
   }
   
 

@@ -59,9 +59,10 @@ export class HomeComponent implements OnInit , OnDestroy {
       
     }
 
-  ngOnDestroy() : void{
-
-  }
+    ngOnDestroy(){
+      location.reload();
+  
+    }
 
   
 
