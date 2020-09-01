@@ -3,11 +3,11 @@
 }
 
 ::ng-deep.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
-    color: #f44336 !important;
+    color: #e85f03 !important;
 }
 
 ::ng-deep.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
-    color: #f44336 !important;
+    color: #e85f03 !important;
 }
 
 ::ng-deep.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
@@ -35,11 +35,11 @@
 }
 
 ::ng-deep.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
-    background-color: #f44336 !important;
+    background-color: #e85f03 !important;
 }
 
 ::ng-deep.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
-    background-color: #f44336 !important;
+    background-color: #e85f03 !important;
 }
 
 ::ng-deep.mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
@@ -82,7 +82,7 @@
 ::ng-deep.mat-warn .mat-slider-track-fill,
 ::ng-deep.mat-warn .mat-slider-thumb,
 ::ng-deep.mat-warn .mat-slider-thumb-label {
-    background-color: #f44336 !important;
+    background-color: #e85f03 !important;
 }
 
 ::ng-deep.mat-warn .mat-slider-thumb-label-text {
@@ -165,7 +165,7 @@
 }
 
 ::ng-deep.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #f44336 !important;
+    border-color: #e85f03 !important;
 }
 
 ::ng-deep.mat-radio-button .mat-ripple-element {
@@ -176,5 +176,9 @@
 ::ng-deep.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
 ::ng-deep.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
-    background-color: #f44336 !important;
+    background-color: #e85f03 !important;
+}
+
+::ng-deep.mat-input-element {
+    caret-color: #e85f03 !important;
 }
