@@ -1,213 +1,194 @@
-.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
+::ng-deep.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
     color: #e85f03 !important;
 }
 
-.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
+::ng-deep.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
     color: #f44336 !important;
 }
 
-.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+::ng-deep.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
     color: #f44336 !important;
 }
 
-.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+::ng-deep.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
     color: #ffffff !important;
 }
 
-.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+::ng-deep.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     background-color: #e85f03 !important;
 }
 
-.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+::ng-deep.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
     background-color: #ffffff !important;
 }
 
-.mat-slide-toggle.mat-checked .mat-ripple-element {
+::ng-deep.mat-slide-toggle.mat-checked .mat-ripple-element {
     background-color: #e85f03 !important;
 }
 
-.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+::ng-deep.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
     background-color: #e85f03 !important;
 }
 
-.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
+::ng-deep.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
     background-color: #e85f03 !important;
 }
 
-.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
+::ng-deep.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
     background-color: #f44336 !important;
 }
 
-.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
+::ng-deep.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
     background-color: #f44336 !important;
 }
 
-.mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
+::ng-deep.mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
     background-color: #ffffff !important;
 }
 
-.mat-slide-toggle-thumb {
+::ng-deep.mat-slide-toggle-thumb {
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
     background-color: #fafafa !important;
 }
 
-.mat-slide-toggle-bar {
+::ng-deep.mat-slide-toggle-bar {
     background-color: #ffffff !important;
 }
 
-.mat-slider-track-background {
+::ng-deep.mat-slider-track-background {
     background-color: #ffffff !important;
 }
 
-.mat-primary .mat-slider-track-fill,
-.mat-primary .mat-slider-thumb,
-.mat-primary .mat-slider-thumb-label {
+::ng-deep.mat-primary .mat-slider-track-fill,
+::ng-deep.mat-primary .mat-slider-thumb,
+::ng-deep.mat-primary .mat-slider-thumb-label {
     background-color: #e85f03 !important;
 }
 
-.mat-primary .mat-slider-thumb-label-text {
+::ng-deep.mat-primary .mat-slider-thumb-label-text {
     color: #fff !important;
 }
 
-.mat-accent .mat-slider-track-fill,
-.mat-accent .mat-slider-thumb,
-.mat-accent .mat-slider-thumb-label {
+::ng-deep.mat-accent .mat-slider-track-fill,
+::ng-deep.mat-accent .mat-slider-thumb,
+::ng-deep.mat-accent .mat-slider-thumb-label {
     background-color: #e85f03 !important;
 }
 
-.mat-accent .mat-slider-thumb-label-text {
+::ng-deep.mat-accent .mat-slider-thumb-label-text {
     color: rgba#ffffff !important;
 }
 
-.mat-warn .mat-slider-track-fill,
-.mat-warn .mat-slider-thumb,
-.mat-warn .mat-slider-thumb-label {
+::ng-deep.mat-warn .mat-slider-track-fill,
+::ng-deep.mat-warn .mat-slider-thumb,
+::ng-deep.mat-warn .mat-slider-thumb-label {
     background-color: #f44336 !important;
 }
 
-.mat-warn .mat-slider-thumb-label-text {
+::ng-deep.mat-warn .mat-slider-thumb-label-text {
     color: #fff !important;
 }
 
-.mat-slider-focus-ring {
+::ng-deep.mat-slider-focus-ring {
     background-color: #ffffff !important;
 }
 
-.mat-slider:hover .mat-slider-track-background,
-.cdk-focused .mat-slider-track-background {
+::ng-deep.mat-slider:hover .mat-slider-track-background,
+::ng-deep.cdk-focused .mat-slider-track-background {
     background-color: #ffffff !important;
 }
 
-.mat-slider-disabled .mat-slider-track-background,
-.mat-slider-disabled .mat-slider-track-fill,
-.mat-slider-disabled .mat-slider-thumb {
+::ng-deep.mat-slider-disabled .mat-slider-track-background,
+::ng-deep.mat-slider-disabled .mat-slider-track-fill,
+::ng-deep.mat-slider-disabled .mat-slider-thumb {
     background-color: #ffffff !important;
 }
 
-.mat-slider-disabled:hover .mat-slider-track-background {
+::ng-deep.mat-slider-disabled:hover .mat-slider-track-background {
     background-color: #ffffff !important;
 }
 
-.mat-slider-min-value .mat-slider-focus-ring {
+::ng-deep.mat-slider-min-value .mat-slider-focus-ring {
     background-color: #ffffff !important;
 }
 
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
     border-color: #ffffff !important;
     background-color: transparent !important;
 }
 
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb,
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
+::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb,
+::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
     border-color: #ffffff !important;
 }
 
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover.mat-slider-disabled .mat-slider-thumb,
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused.mat-slider-disabled .mat-slider-thumb {
+::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover.mat-slider-disabled .mat-slider-thumb,
+::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused.mat-slider-disabled .mat-slider-thumb {
     border-color: #ffffff !important;
 }
 
-.mat-slider-has-ticks .mat-slider-wrapper::after {
+::ng-deep.mat-slider-has-ticks .mat-slider-wrapper::after {
     border-color: rgba#ffffff !important;
 }
 
-.mat-slider-horizontal .mat-slider-ticks {
+::ng-deep.mat-slider-horizontal .mat-slider-ticks {
     background-image: repeating-linear-gradient(to right, #fff, #fff 2px, transparent 0, transparent) !important;
     background-image: -moz-repeating-linear-gradient(0.0001deg, #fff, #fff 2px, transparent 0, transparent) !important;
 }
 
-.mat-slider-vertical .mat-slider-ticks {
+::ng-deep.mat-slider-vertical .mat-slider-ticks {
     background-image: repeating-linear-gradient(to bottom, #fff, #fff 2px, transparent 0, transparent) !important;
 }
 
-.mat-step-header.cdk-keyboard-focused,
-.mat-step-header.cdk-program-focused,
-.mat-step-header:hover {
+::ng-deep.mat-step-header.cdk-keyboard-focused,
+::ng-deep.mat-step-header.cdk-program-focused,
+::ng-deep.mat-step-header:hover {
     background-color: #fff !important;
 }
 
 @media(hover: none) {
-    .mat-step-header:hover {
+     ::ng-deep.mat-step-header:hover {
         background: none !important;
     }
 }
 
-.mat-radio-outer-circle {
+::ng-deep.mat-radio-outer-circle {
     border-color: #ffffff !important;
 }
 
-.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+::ng-deep.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
     border-color: #e85f03 !important;
 }
 
-.mat-radio-button.mat-primary .mat-radio-inner-circle,
-.mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
-.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple,
-.mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
-    background-color: #e85f03 !important;
-}
-
-.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
     border-color: #e85f03 !important;
 }
 
-.mat-radio-button.mat-accent .mat-radio-inner-circle,
-.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
-.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
-.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
-    background-color: #e85f03 !important;
-}
-
-.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
+::ng-deep.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
     border-color: #f44336 !important;
 }
 
-.mat-radio-button.mat-warn .mat-radio-inner-circle,
-.mat-radio-button.mat-warn .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
-.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-persistent-ripple,
-.mat-radio-button.mat-warn:active .mat-radio-persistent-ripple {
-    background-color: #f44336 !important;
-}
-
-.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
-.mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
+::ng-deep.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
+::ng-deep.mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
     border-color: black !important;
 }
 
-.mat-radio-button.mat-radio-disabled .mat-radio-ripple .mat-ripple-element,
-.mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
+::ng-deep.mat-radio-button.mat-radio-disabled .mat-radio-ripple .mat-ripple-element,
+::ng-deep.mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
     background-color: black !important;
 }
 
-.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
+::ng-deep.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
     color: black !important;
 }
 
-.mat-radio-button .mat-ripple-element {
-    background-color: #ffffff
+::ng-deep.mat-radio-button .mat-ripple-element {
+    background-color: #ffffff !important;
 }
 
-.mat-radio-button.mat-radio-disabled .mat-radio-ripple .mat-ripple-element,
-.mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
-    background-color: #000000!important;
+::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle,
+::ng-deep.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+::ng-deep.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #f44336 !important;
 }

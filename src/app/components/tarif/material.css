@@ -1,24 +1,19 @@
-.mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: #e85f03 !important;
-    ;
-}
-
-.mat-form-field-infix {
+::ng-deep.mat-form-field-infix {
     border-top: .84375em solid transparent !important;
 }
 
-.mat-select-value {
+::ng-deep.mat-select-value {
     color: #e85f03 !important;
 }
 
-.mat-form-field-hide-placeholder .mat-select-placeholder {
+::ng-deep.mat-form-field-hide-placeholder .mat-select-placeholder {
     color: #e85f03 !important;
     -webkit-text-fill-color: transparent !important;
     transition: none;
     display: block;
 }
 
-::ng-deep .mat-focused .mat-form-field-label {
+::ng-deep.mat-focused .mat-form-field-label {
     /*change color of label*/
     color: white !important;
 }
@@ -55,48 +50,48 @@
     color: #e85f03 !important
 }
 
-.mat-select-arrow {
+::ng-deep.mat-select-arrow {
     color: #ffffff !important
 }
 
-.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #e85f03 !important
 }
 
-.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+::ng-deep.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #e85f03 !important
 }
 
-.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
+::ng-deep.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #f44336 !important
 }
 
-.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
+::ng-deep.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
     color: #f44336 !important;
 }
 
-.mat-optgroup-label {
+::ng-deep.mat-optgroup-label {
     color: #ffffff !important;
 }
 
-.mat-optgroup-disabled .mat-optgroup-label {
+::ng-deep.mat-optgroup-disabled .mat-optgroup-label {
     color: #ffffff !important;
 }
 
-.mat-primary .mat-pseudo-checkbox-checked,
-.mat-primary .mat-pseudo-checkbox-indeterminate {
+::ng-deep.mat-primary .mat-pseudo-checkbox-checked,
+::ng-deep.mat-primary .mat-pseudo-checkbox-indeterminate {
     background: #e85f03 !important;
 }
 
-.mat-pseudo-checkbox-checked,
-.mat-pseudo-checkbox-indeterminate,
-.mat-accent .mat-pseudo-checkbox-checked,
-.mat-accent .mat-pseudo-checkbox-indeterminate {
+::ng-deep.mat-pseudo-checkbox-checked,
+::ng-deep.mat-pseudo-checkbox-indeterminate,
+::ng-deep.mat-accent .mat-pseudo-checkbox-checked,
+::ng-deep.mat-accent .mat-pseudo-checkbox-indeterminate {
     background: #e85f03 !important;
 }
 
-.mat-warn .mat-pseudo-checkbox-checked,
-.mat-warn .mat-pseudo-checkbox-indeterminate {
+::ng-deep.mat-warn .mat-pseudo-checkbox-checked,
+::ng-deep.mat-warn .mat-pseudo-checkbox-indeterminate {
     background: #f44336 !important;
 }
 
@@ -354,19 +349,19 @@
     background: #f44336 !important
 }
 
-.mat-chip.mat-standard-chip {
+::ng-deep.mat-chip.mat-standard-chip {
     background-color: #e0e0e0 !important;
     color: rgba#ffffff !important
 }
 
-.mat-chip.mat-standard-chip .mat-chip-remove {
+::ng-deep.mat-chip.mat-standard-chip .mat-chip-remove {
     color: rgba#ffffff !important;
 }
 
-.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+::ng-deep.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
     background: #ffffff !important;
 }
 
-.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+::ng-deep.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
     color: #e85f03 !important;
 }
