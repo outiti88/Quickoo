@@ -24,22 +24,22 @@
                     border-radius: 10px;
                   
                 ">MON ESPACE</a>
-                    <div class="header--nav-toggle" (click)="toggle=!toggle">
+                    <div class="header--nav-toggle">
                         <span></span>
                     </div>
 
                 </header>
                 <nav class="l-side-nav">
                     <ul class="side-nav">
-                        <li [ngClass]="{'is-active': slide === 0}" (click)="slider(0)"><span>Avec Quickoo</span></li>
-                        <li [ngClass]="{'is-active': slide === 1}" (click)="slider(1)"><span>Nos services</span></li>
-                        <li [ngClass]="{'is-active': slide === 2}" (click)="slider(2)"><span>Nos clients</span></li>
-                        <li [ngClass]="{'is-active': slide === 3}" (click)="slider(3)"><span>Contact</span></li>
-                        <li [ngClass]="{'is-active': slide === 4}" (click)="slider(4)"><span>Nos localités</span></li>
+                        <li class="is-active"><span>Avec Quickoo</span></li>
+                        <li><span>Nos services</span></li>
+                        <li><span>Nos clients</span></li>
+                        <li><span>Contact</span></li>
+                        <li><span>Nos localités</span></li>
                     </ul>
                 </nav>
-                <ul class="l-main-content main-content" (click)="toggle = false">
-                    <li [class]="slide === 0 ? 'section--is-active l-section section': 'l-section section'">
+                <ul class="l-main-content main-content">
+                    <li class="l-section section section--is-active">
                         <div style="padding-top:30px ;" class="intro">
                             <div class="intro--banner">
                                 <h1>La <span style="color: #e85f03;">logistique</span><br>au service<br>du <span style="color: #e85f03;">e</span>-commerce</h1>
@@ -57,7 +57,7 @@
 
                         </div>
                     </li>
-                    <li [class]="slide === 1 ? 'section--is-active l-section section': 'l-section section'">
+                    <li class="l-section section">
                         <div class="about">
                             <div class="about--banner" style="text-align: center;height: auto; width: 1100px;
                             position: relative;
@@ -97,9 +97,9 @@
                         </div>
 
                     </li>
-                    <li [class]="slide === 2 ? 'section--is-active l-section section': 'l-section section'">
-                        <div class="work" style="    margin-top: 10px;">
-                            <h2>Qui nous font confiance</h2>
+                    <li class="l-section section">
+                        <div class="work">
+                            <h2>Qui nous ont fait confiance</h2>
                             <div class="work--lockup">
                                 <ul class="slider">
                                     <li class="slider--item slider--item-left">
@@ -150,7 +150,7 @@
                         </div>
 
                     </li>
-                    <li [class]="slide === 3 ? 'section--is-active l-section section': 'l-section section'">
+                    <li class="l-section section">
 
                         <div class="hire">
                             <h2 style="padding-top: 20px;">Contact</h2>
@@ -231,19 +231,19 @@
 
 
                     </li>
-                    <li [class]="slide === 4 ? 'section--is-active l-section section': 'l-section section'">
+                    <li class="l-section section">
                         <div class="contact">
                             <div class="contact--lockup">
                                 <div class="modal">
                                     <div class="modal--information">
-                                        <p>10, Rue 102, Lot. Al Bakhti., Idrissia, <br> Tanger 90600</p>
+                                        <p>Messnana , marjane park , Tanger</p>
                                         <a href="mailto:ouremail@gmail.com">Quickoo@gmail.com</a>
                                         <a href="tel:+148126287560">+48 12 628 75 60</a>
                                     </div>
                                     <ul class="modal--options">
                                         <li><a target="_blank" href="https://www.facebook.com/DeliveryQuickoo">Facebook</a></li>
                                         <li><a target="_blank" href="https://www.instagram.com/DeliveryQuickoo">Instagram</a></li>
-                                        <li style="text-transform:none"><a target="_blank" href="https://www.linkedin.com/company/quickoo/">LinkedIn</a></li>
+                                        <li style="text-transform:none"><a target="_blank" href="https://www.linkedin.com/in/quickoo/">LinkedIn</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -253,10 +253,10 @@
             </div>
         </div>
     </div>
-    <ul class="outer-nav " [ngClass]="{'is-vis' : toggle}">
-        <li [ngClass]="{'is-vis' : toggle}" class="is-active"><span><a style="text-decoration: none; color:#FFF" routerLink="/" >ACCEUIL</a></span></li>
-        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/Quickoo" >QUICKOO</a></span></li>
-        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/Tarifs" >TARIFS</a></span></li>
-        <li [ngClass]="{'is-vis' : toggle}"><span><a style="text-decoration: none; color:#FFF" routerLink="/Service" >SERVICE</a></span></li>
+    <ul class="outer-nav ">
+        <li class="is-active"><span><a style="text-decoration: none; color:#FFF" href="/" >ACCEUIL</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Quickoo" >QUICKOO</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Tarifs" >TARIFS</a></span></li>
+        <li><span><a style="text-decoration: none; color:#FFF" href="/Service" >SERVICE</a></span></li>
     </ul>
 </div>
