@@ -209,7 +209,7 @@
                                                     position: relative;
                                                     top: -15px;">
                                                         <mat-label>POIDS (Kg)</mat-label>
-                                                        <input matInput type="number" [(ngModel)]="value">
+                                                        <input matInput min="0" max="50" type="number" [(ngModel)]="value">
                                                     </mat-form-field>
                                                 </div>
                                             </div>

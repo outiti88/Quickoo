@@ -39,7 +39,9 @@ export class AuthComponent implements OnInit {
       },
       (error) => {
         console.log("auth", error)
-        this.errorMessage = error;
+        if(error.code === "auth/wrong-password")
+        this.errorMessage = "Erreur: le mot de passe n'est pas valide";
+        else this.errorMessage = "Erreur: Adresse mail incorrecte ou utilisateur supprimé."
       }
     );
   }

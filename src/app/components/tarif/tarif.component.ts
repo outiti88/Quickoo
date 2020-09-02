@@ -133,19 +133,6 @@ export class TarifComponent implements OnInit  {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   telecharger() {
 
    /*  const options = {
@@ -171,9 +158,14 @@ export class TarifComponent implements OnInit  {
   }
 
   tarif(n : number) {
+
+    
       
-    if(this.value < 26)
+  if(this.value < 26)
     { 
+      if(this.value < 0){
+        this.value = 0;
+      }
       let tmp  = this.toNumber(this.typeEmb*this.selectedValue/this.selectedValue) +this.selectedValue ; //prix de l'embalage + personalisation
      let mad = this.value + this.selectedVille + (tmp + (tmp*0.3))  + n;
     

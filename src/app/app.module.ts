@@ -55,7 +55,7 @@ import { SingleDevisComponent } from './components/devis/single-devis/single-dev
 
 
 const appRoutes : Routes =[
-  { path: 'ComingSoon', component: SoonComponent },
+  { path: 'NotFound', component: SoonComponent },
   { path: 'devis/view/:id', canActivate: [AuthGuardService],  component: SingleDevisComponent },
 
   { path: 'contacts/view/:id', canActivate: [AuthGuardService],  component: SingleContactComponent },
@@ -69,7 +69,7 @@ const appRoutes : Routes =[
 
 
   { path: '' , component : HomeComponent  },
-  { path: '**', redirectTo: 'ComingSoon' }
+  { path: '**', redirectTo: 'NotFound' }
 ] ;
 
 @NgModule({
