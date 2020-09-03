@@ -4,6 +4,7 @@ export class Contact {
     livraison: string;
     service: string;
     recrutement: string;
+    date: string;
     constructor(public name: string, public email: string) {
     }
   }

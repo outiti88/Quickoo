@@ -4,6 +4,7 @@ import { DevisService } from 'src/app/services/devis.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Devis } from 'src/app/models/devis.model'
+import {formatDate} from '@angular/common';
 
 
 
@@ -121,6 +122,7 @@ export class TarifComponent implements OnInit  {
     newDevis.service = service;
     newDevis.produit = produit;
     newDevis.commentaire = commentaire;
+    newDevis.date = formatDate(new Date(), 'yyyy/MM/dd hh:mm:ss', 'en');
 
     this.devisService.createNewDevis(newDevis);
     console.log('bien envoyé');

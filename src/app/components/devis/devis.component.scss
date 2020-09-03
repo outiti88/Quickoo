@@ -94,6 +94,12 @@ button.list-group-item {
     content: "\2212";
 }
 
+.test {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 div.test a {
     color: #FFF;
     text-decoration: none;
@@ -103,6 +109,10 @@ div.test a {
     position: relative;
     z-index: 0;
     cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: block;
+    text-align: center;
 }
 
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/services/contact.service';
 import { Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact.model';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -59,9 +60,11 @@ export class HomeComponent implements OnInit , OnDestroy {
       newContact.service = service;
       newContact.recrutement = recrutement;
       newContact.stockage = stockage;
+      newContact.date = formatDate(new Date(), 'yyyy/MM/dd hh:mm:ss', 'en');
 
       this.contactsService.createNewContact(newContact);
       console.log('bien envoyé');
+
       alert('bien envoyé');
       this.router.navigate(['/Tarifs']);
       
