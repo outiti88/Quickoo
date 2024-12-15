@@ -3,11 +3,11 @@
 }
 
 ::ng-deep.mat-select-value {
-    color: #e85f03 !important;
+    color: #568510 !important;
 }
 
 ::ng-deep.mat-form-field-hide-placeholder .mat-select-placeholder {
-    color: #e85f03 !important;
+    color: #568510 !important;
     -webkit-text-fill-color: transparent !important;
     transition: none;
     display: block;
@@ -25,7 +25,7 @@
 
  ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: #e85f03 !important;
+    background-color: #568510 !important;
     ;
 }
 
@@ -35,7 +35,7 @@
 
 
 /*::ng-deep.mat-option {
-    color: #e85f03 !important;
+    color: #568510 !important;
 }*/
 
 ::ng-deep.mat-label {
@@ -47,7 +47,7 @@
 }
 
 ::ng-deep.mat-simple-snackbar-action {
-    color: #e85f03 !important
+    color: #568510 !important
 }
 
 ::ng-deep.mat-select-arrow {
@@ -55,19 +55,19 @@
 }
 
 ::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #e85f03 !important
+    color: #568510 !important
 }
 
 ::ng-deep.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #e85f03 !important
+    color: #568510 !important
 }
 
 ::ng-deep.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #e85f03 !important
+    color: #568510 !important
 }
 
 ::ng-deep.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: #e85f03 !important;
+    color: #568510 !important;
 }
 
 ::ng-deep.mat-optgroup-label {
@@ -80,19 +80,19 @@
 
 ::ng-deep.mat-primary .mat-pseudo-checkbox-checked,
 ::ng-deep.mat-primary .mat-pseudo-checkbox-indeterminate {
-    background: #e85f03 !important;
+    background: #568510 !important;
 }
 
 ::ng-deep.mat-pseudo-checkbox-checked,
 ::ng-deep.mat-pseudo-checkbox-indeterminate,
 ::ng-deep.mat-accent .mat-pseudo-checkbox-checked,
 ::ng-deep.mat-accent .mat-pseudo-checkbox-indeterminate {
-    background: #e85f03 !important;
+    background: #568510 !important;
 }
 
 ::ng-deep.mat-warn .mat-pseudo-checkbox-checked,
 ::ng-deep.mat-warn .mat-pseudo-checkbox-indeterminate {
-    background: #e85f03 !important;
+    background: #568510 !important;
 }
 
 ::ng-deep.mat-chip.mat-standard-chip {
@@ -109,7 +109,7 @@
 }
 
 ::ng-deep.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-    color: #e85f03 !important;
+    color: #568510 !important;
 }
 
 ::ng-deep.mat-form-field-appearance-fill .mat-form-field-underline::before {

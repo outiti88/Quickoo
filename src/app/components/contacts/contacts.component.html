@@ -22,15 +22,15 @@ padding-top: 20px;
             <h2 style="
             text-align: center;
             font-size: 4em;
-            color: #e85f03;
+            color: #568510;
         ">Les contacts</h2>
             <div class="list-group btnlist">
                 <button style="
-                background: #e85f0300;
+                background: #56851000;
                 color: white;
                 margin-bottom: 10px;
             " class="list-group-item " *ngFor="let contact of contacts; let i = index" (click)="onViewContact(i)">
-              <h3 style="color:#e85f03" class="list-group-item-heading">
+              <h3 style="color:#568510" class="list-group-item-heading">
                 {{ contact.name }}
                 <button class="btn btn-default pull-right" (click)="onDeleteContact(contact)">
                   <span class="glyphicon glyphicon-minus"></span>

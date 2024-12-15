@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-quickoo',
-  templateUrl: './quickoo.component.html',
-  styleUrls: ['./quickoo.component.scss']
+  selector: 'app-Rafex Delivery',
+  templateUrl: './Rafex Delivery.component.html',
+  styleUrls: ['./Rafex Delivery.component.scss']
 })
-export class QuickooComponent implements OnInit {
+export class Rafex DeliveryComponent implements OnInit {
 
   constructor() { }
 
