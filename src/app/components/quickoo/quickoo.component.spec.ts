@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuickooComponent } from './quickoo.component';
+import { Rafex DeliveryComponent } from './Rafex Delivery.component';
 
-describe('QuickooComponent', () => {
-  let component: QuickooComponent;
-  let fixture: ComponentFixture<QuickooComponent>;
+describe('Rafex DeliveryComponent', () => {
+  let component: Rafex DeliveryComponent;
+  let fixture: ComponentFixture<Rafex DeliveryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuickooComponent ]
+      declarations: [ Rafex DeliveryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuickooComponent);
+    fixture = TestBed.createComponent(Rafex DeliveryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { QuickooComponent } from './components/quickoo/quickoo.component';
+import { Rafex DeliveryComponent } from './components/Rafex Delivery/Rafex Delivery.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarifComponent } from './components/tarif/tarif.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -61,7 +61,7 @@ const appRoutes : Routes =[
   { path: 'contacts/view/:id', canActivate: [AuthGuardService],  component: SingleContactComponent },
   { path: 'Acceuil' , component : HomeComponent  }, 
   { path: 'Tarifs' , component : TarifComponent  },
-  { path: 'Quickoo' , component : QuickooComponent  },
+  { path: 'Rafex Delivery' , component : Rafex DeliveryComponent  },
   { path: 'Service' , component : ServiceComponent  },
   { path: 'Auth' , component : AuthComponent  }, 
   { path: 'contacts' , canActivate: [AuthGuardService],  component : ContactsComponent  }, 
@@ -76,7 +76,7 @@ const appRoutes : Routes =[
   declarations: [
     AppComponent,
     NavbarComponent,
-    QuickooComponent,
+    Rafex DeliveryComponent,
     HomeComponent,
     TarifComponent,
     AuthComponent,
